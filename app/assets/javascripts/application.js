@@ -13,4 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require js/vendor/modernizr-2.6.2.min
+//= require js/vendor/jquery-1.10.2.min
+//= require js/bootstrap.min
+//= require js/plugins
+//= require js/main
+//= require js/wow.min
+
+         new WOW(
+            ).init();
+
+
+
 //= require_tree .
+
+        

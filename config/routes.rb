@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  
+  root 'static_pages#home'
+
   get 'static_pages/about'
 
-  get 'static_pages/how-it-works'
+  get 'static_pages/how-it-works', to: 'static_pages#howitworks'
 
   get 'static_pages/promotions'
 
