@@ -18,5 +18,12 @@
  *= require css/main       
  *= require css/animate
  *= require css/responsive
-        
+  
+ *= require css/vendor
+ *= require css/flat-admin
+ *= require css/theme/blue-sky
+ *= require css/theme/blue
+ *= require css/theme/red
+ *= require css/theme/yellow
+
  */

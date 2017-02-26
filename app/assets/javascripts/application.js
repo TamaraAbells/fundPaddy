@@ -18,6 +18,10 @@
 //= require js/bootstrap.min
 //= require js/plugins
 //= require js/main
+
+//= require js/vendor
+//= require js/app
+
 //= require js/wow.min
 
          new WOW(
