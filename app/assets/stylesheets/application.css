@@ -18,6 +18,7 @@
  *= require css/main       
  *= require css/animate
  *= require css/responsive
+ *= require gritter
   
  *= require css/vendor
  *= require css/flat-admin
@@ -25,5 +26,6 @@
  *= require css/theme/blue
  *= require css/theme/red
  *= require css/theme/yellow
+
 
  */

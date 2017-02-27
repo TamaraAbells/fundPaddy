@@ -37,6 +37,12 @@ gem 'jbuilder', '~> 2.5'
 #Adding font awesome to project
 gem "font-awesome-rails"
 
+#using devise for authentication
+gem 'devise'
+
+#adding gritter gem for displaying notifications 
+gem "gritter", "1.2.0"
+
 group :development, :test do
   gem 'sqlite3', '1.3.12'
   gem 'byebug',  '9.0.0', platform: :mri

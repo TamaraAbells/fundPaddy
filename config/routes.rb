@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :members
   get 'office/index'
 
   root 'static_pages#home'

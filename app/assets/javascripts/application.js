@@ -21,6 +21,7 @@
 
 //= require js/vendor
 //= require js/app
+//= require gritter
 
 //= require js/wow.min
 
