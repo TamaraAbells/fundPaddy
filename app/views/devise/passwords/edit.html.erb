@@ -1,25 +1,83 @@
-<h2>Change your password</h2>
+ <div class="app app-default">
+
+<div class="app-container app-login">
+  <div class="flex-center">
+    <div class="app-header"></div>
+    <div class="app-body">
+      <div class="loader-container text-center">
+          <div class="icon">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+              </div>
+            </div>
+          <div class="title">Change Password ...</div>
+      </div>
+      <div class="app-block">
+      <div class="app-form">
+        <div class="form-header">
+          <div class="app-brand"><span class="highlight">Create New Password</span> (fundPaddy)</div>
+        </div>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
-  <div class="field">
-    <%= f.label :password, "New password" %><br />
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em><br />
-    <% end %>
-    <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
-  </div>
+       <!--  <form action="/" method="POST"> -->
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <i class="fa fa-key" aria-hidden="true"></i></span>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "Confirm new password" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+                 <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+                <% end %>
+                <%= f.password_field :password, autofocus: true, autocomplete: "off", class: 'form-control', placeholder: "New Password", 'aria-describedby': 'basic-addon3' %>
+                 <!-- 
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"> -->
+            </div>
 
-  <div class="actions">
-    <%= f.submit "Change my password" %>
-  </div>
-<% end %>
+              <div class="input-group">
+              <span class="input-group-addon" id="basic-addon1">
+                <i class="fa fa-key" aria-hidden="true"></i></span>
 
-<%= render "devise/shared/links" %>
+                   <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Confirm New Password', 'aria-describedby': 'basic-addon3' %>
+                 <!-- 
+              <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1"> -->
+            </div>
+           
+            <div class="text-center">
+
+              <div class="actions">
+                <%= f.submit "Change My Password", class: 'btn btn-success btn-submit' %>
+              </div>
+            
+               <!--  <input type="submit" class="btn btn-success btn-submit" value="Login"> -->
+            </div>
+            <% end %>
+
+
+            <%= render "devise/shared/links" %>
+       <!--  </form> -->
+<!-- 
+        <div class="form-line">
+          <div class="title">OR</div>
+        </div>
+        <div class="form-footer">
+          <button type="button" class="btn btn-default btn-sm btn-social __facebook">
+            <div class="info">
+              <i class="icon fa fa-facebook-official" aria-hidden="true"></i>
+              <span class="title">Login with Facebook</span>
+            </div>
+          </button>
+        </div> -->
+      </div>
+      </div>
+    </div>
+    <div class="app-footer">
+    </div>
+  </div>
+</div>
+
+  </div>

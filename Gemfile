@@ -43,6 +43,9 @@ gem 'devise'
 #adding gritter gem for displaying notifications 
 gem "gritter", "1.2.0"
 
+#add toastr gem for notifications
+gem 'toastr-rails'
+
 group :development, :test do
   gem 'sqlite3', '1.3.12'
   gem 'byebug',  '9.0.0', platform: :mri
