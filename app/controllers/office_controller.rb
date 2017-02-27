@@ -5,6 +5,7 @@ class OfficeController < ApplicationController
  before_action :authenticate_member!
 
   def index
-  	@member = Members.find(params[:id])
+  	flash[:notice] = "This is your Office"
+  	@member = current_member
   end
 end

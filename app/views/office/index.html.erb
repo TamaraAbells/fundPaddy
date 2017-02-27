@@ -1,3 +1,4 @@
+ <% provide(:title, @member.fullname) %>
  <div class="app app-default">
 
 <aside class="app-sidebar" id="sidebar">
@@ -231,13 +232,13 @@
         <li class="dropdown profile">
           <a href="/html/pages/profile.html" class="dropdown-toggle"  data-toggle="dropdown">
 
-          	<%= image_tag('profile.png', class: 'profile-img') %>
+          	<%= gravatar_for(@member)%>
 <!--             <img class="profile-img" src="./assets/images/profile.png">
  -->            <div class="title">Profile</div>
           </a>
           <div class="dropdown-menu">
             <div class="profile-info">
-              <h4 class="username">Scott White</h4>
+              <h4 class="username"><%=@member.fullname%></h4>
             </div>
             <ul class="action">
               <li>
