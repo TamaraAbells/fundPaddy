@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: one
+  bank_name: MyString
+  acc_no: MyString
+  acc_name: MyString
+  bitcoin_address: MyString
+  phone: MyString
+
+two:
+  member: two
+  bank_name: MyString
+  acc_no: MyString
+  acc_name: MyString
+  bitcoin_address: MyString
+  phone: MyString

@@ -6,5 +6,6 @@ class Member < ApplicationRecord
 
 
    validates_presence_of :fullname
-
+   
+   has_one :account
 end
