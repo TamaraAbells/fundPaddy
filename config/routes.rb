@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   
+ 
+
   devise_for :members
+
+  get 'office/settings'
+  
+  resources :accounts
+  
+  get '/office', to: 'office#index', as: 'office'
+  
   get 'office/index'
 
   root 'static_pages#home'

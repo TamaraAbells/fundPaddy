@@ -7,5 +7,5 @@ class Member < ApplicationRecord
 
    validates_presence_of :fullname
    
-   has_one :account
+   has_many :accounts, dependent: :destroy
 end

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Office - fundPaddy</title>
+    <title><%= full_title(yield(:title)) %></title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
 
@@ -38,7 +38,7 @@
           <div class="icon">
             <i class="fa fa-tasks" aria-hidden="true"></i>
           </div>
-          <div class="title">Dashboard</div>
+          <div class="title"><%=yield(:page_title)%></div>
         </a>
       </li>
       <li class="@@menu.messaging">
@@ -118,8 +118,7 @@
   </div>
 </script>
 <div class="app-container">
-
-  <nav class="navbar navbar-default" id="navbar">
+<nav class="navbar navbar-default" id="navbar">
   <div class="container-fluid">
     <div class="navbar-collapse collapse in">
       <ul class="nav navbar-nav navbar-mobile">
@@ -133,14 +132,12 @@
         </li>
         <li>
           <button type="button" class="navbar-toggle">
-
-          <%= image_tag('profile.png', class: 'profile-img') %>
-<!--             <img class="profile-img" src="./assets/images/profile.png"> -->
+            <img class="profile-img" src="../assets/images/profile.png">
           </button>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-left">
-        <li class="navbar-title">Dashboard</li>
+        <li class="navbar-title"><span class="highlight"><%=yield :page_title %></span></li>
         <li class="navbar-search hidden-sm">
           <input id="search" type="text" placeholder="Search..">
           <button class="btn-search"><i class="fa fa-search"></i></button>
@@ -276,9 +273,7 @@
                 </a>
               </li>
               <li>
-                <a href="#">
-                  Setting
-                </a>
+                <%= link_to "Settings", office_settings_path %>
               </li>
               <% if member_signed_in? %>
                 <li>
@@ -293,21 +288,7 @@
   </div>
 </nav>
 
-  <div class="btn-floating" id="help-actions">
-  <div class="btn-bg"></div>
-  <button type="button" class="btn btn-default btn-toggle" data-toggle="toggle" data-target="#help-actions">
-    <i class="icon fa fa-plus"></i>
-    <span class="help-text">Shortcut</span>
-  </button>
-  <div class="toggle-content">
-    <ul class="actions">
-      <li><a href="#">Website</a></li>
-      <li><a href="#">Documentation</a></li>
-      <li><a href="#">Issues</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-  </div>
-</div>
+
 
 
     <%= yield %>
@@ -323,9 +304,7 @@
   </div>
 </footer>
 </div>
-
-  </div>
-
+</div>
 
     
     <%= debug(params) if Rails.env.development? %>

@@ -1,0 +1,99 @@
+ <% provide(:page_title, "Settings") %>
+ 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          Your Account Details 
+        </div>
+    <div class="card-body">
+
+    <% if @set_account %>
+       <%= render 'shared/account' %>
+    <% else %>
+
+                <div class="row">
+                  
+                  <div class="col-md-6">
+                
+                  <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-phone" aria-hidden="true"></i></span>
+
+                  <input type="text" class="form-control" placeholder="<%=@account.phone%>" aria-describedby="basic-addon1" disabled>
+              
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-bank" aria-hidden="true"></i></span>
+
+                  
+                  <input type="text" class="form-control" placeholder="<%=@account.bank_name%>" aria-describedby="basic-addon1" value="" disabled>
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-user" aria-hidden="true"></i></span>
+                  
+                  <input type="text" class="form-control" placeholder="<%=@account.acc_no%>" aria-describedby="basic-addon1" value="" disabled>
+                </div>
+
+                <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-navicon" aria-hidden="true"></i></span>
+                  
+                  <input type="text" class="form-control" placeholder="<%=@account.acc_name%>" aria-describedby="basic-addon1" value="" disabled>
+                </div>
+
+               
+              </div>
+             <div class="col-md-6">
+                 <select class="select2 form-control">
+                  <option value="NA">Select Country</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="SA">South Africa</option>
+                  <option value="GH">Ghana</option>
+                </select>
+                
+                  <div class="input-group">
+                  <span class="input-group-addon" id="basic-addon1">
+                    <i class="fa fa-bitcoin" aria-hidden="true"></i></span>
+
+                 
+
+                     <input type="text" class="form-control" placeholder="<%=@account.bitcoin_address%>" aria-describedby="basic-addon1" value="" disabled>
+                  
+                </div>
+
+
+                 <textarea name="name" rows="3" class="form-control", placeholder="About You ..."></textarea>
+
+             </div>
+             <div class="form-footer">
+                <div class="form-group">
+                  <div class="col-md-9 col-md-offset-3">
+
+                  
+                    <button type="submit" class="btn btn-primary" disabled>Save</button>
+                    <button type="button" class="btn btn-default">Cancel</button>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
+    <% end %>
+
+
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+  
