@@ -9,6 +9,84 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+  <style type="text/css">
+            
+      .modal.modal-wide{
+        overflow: hidden;
+      }
+      .modal.modal-wide .modal-dialog {
+        width: 94%;
+      }
+      .modal-wide .modal-body {
+        overflow-y: auto;
+      }
+
+@-webkit-keyframes ezCustTrans {
+  0% {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform:  perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    -moz-transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    -ms-transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    opacity: 0;
+  }
+    68% {
+    -webkit-transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    -moz-transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    -ms-transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    opacity: 0.8;                
+    }
+  100% {
+    -webkit-transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    -moz-transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    -ms-transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    opacity: 1;
+  }
+}
+@keyframes ezCustTrans {
+  0% {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    -moz-transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    -ms-transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    transform: perspective(90%) rotateY(-65deg) rotateX(-45deg) translateZ(-200px);
+    opacity: 0;
+  }
+  68% {
+    -webkit-transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    -moz-transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    -ms-transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    transform:  rotateY(10deg) rotateX(10deg) translateZ(20px);
+    opacity: 0.8;                
+    }
+    100% {
+    -webkit-transform: rotateY(0deg) rotateX(0deg) translateZ(0px);
+    -moz-transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    -ms-transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    transform:  rotateY(0deg) rotateX(0deg) translateZ(0px);
+    opacity: 1;
+  }
+}
+.ezCustTrans {
+    -webkit-animation-duration: 0.75s;
+    animation-duration: 0.75s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  -webkit-animation-name: ezCustTrans;
+  animation-name: ezCustTrans;
+}          
+
+
+
+
+  </style>
   <body>
 
 
@@ -46,7 +124,7 @@
           <div class="icon">
             <i class="fa fa-comments" aria-hidden="true"></i>
           </div>
-          <div class="title">Messaging</div>
+          <div class="title">Donations</div>
         </a>
       </li>
       <li class="dropdown ">
@@ -144,23 +222,23 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown notification">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <div class="icon"><i class="fa fa-shopping-basket" aria-hidden="true"></i></div>
-            <div class="title">New Orders</div>
-            <div class="count">0</div>
+        <li class="dropdown notification warning">
+          <a href="<%=new_member_donation_path(current_member) %>" class="dropdown-toggle" data-toggle="">
+            <div class="icon"><i class="fa fa-plus-square" aria-hidden="true"></i></div>
+            <div class="title">New Donation</div>
+           <!--  <div class="count">0</div> -->
           </a>
           <div class="dropdown-menu">
             <ul>
-              <li class="dropdown-header">Ordering</li>
-              <li class="dropdown-empty">No New Ordered</li>
+              <li class="dropdown-header">Create Donation</li>
+              <li class="dropdown-empty">Click on the button to Donate spare funds</li>
               <li class="dropdown-footer">
-                <a href="#">View All <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+              <!--   <a href="#">View All <i class="fa fa-angle-right" aria-hidden="true"></i></a> -->
               </li>
             </ul>
           </div>
         </li>
-        <li class="dropdown notification warning">
+        <li class="dropdown notification info">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <div class="icon"><i class="fa fa-comments" aria-hidden="true"></i></div>
             <div class="title">Unread Messages</div>
@@ -252,13 +330,13 @@
         <li class="dropdown profile">
           <a href="/html/pages/profile.html" class="dropdown-toggle"  data-toggle="dropdown">
 
-            <%= gravatar_for(@member)%>
+            <%= gravatar_for(current_member)%>
 <!--             <img class="profile-img" src="./assets/images/profile.png">
  -->            <div class="title">Profile</div>
           </a>
           <div class="dropdown-menu">
             <div class="profile-info">
-              <h4 class="username"><%=@member.fullname%></h4>
+              <h4 class="username"><%=current_member.fullname%></h4>
             </div>
             <ul class="action">
               <li>

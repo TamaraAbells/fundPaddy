@@ -8,4 +8,5 @@ class Member < ApplicationRecord
    validates_presence_of :fullname
    
    has_many :accounts, dependent: :destroy
+   has_many :donations, dependent: :destroy
 end

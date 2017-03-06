@@ -1,13 +1,18 @@
 Rails.application.routes.draw do
   
- 
+  
+  devise_for :members, :path => 'account'
 
-  devise_for :members
+  resources :members do
+  	resources :donations
+  end
 
   get 'office/settings'
   
   resources :accounts
   
+
+
   get '/office', to: 'office#index', as: 'office'
   
   get 'office/index'

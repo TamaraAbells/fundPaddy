@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hash: MyString
+  amount: 1
+  plan: MyString
+  member: one
+  comment: MyText
+
+two:
+  hash: MyString
+  amount: 1
+  plan: MyString
+  member: two
+  comment: MyText
