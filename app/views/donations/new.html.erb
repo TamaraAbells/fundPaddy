@@ -36,7 +36,7 @@
         <h4 class="modal-title" id="myModal1Label">Acknowledgement</h4>
       </div>
 
-      <%= form_for @donation, url: {action: 'create'} do |f| %>
+      <%= form_for @donation, url: {action: 'create'}, :html => {class: 'donateForm'} do |f| %>
 
 	      <div class="modal-body">
 	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="#" target="_blank">terms & conditions</a> before saving your donation .</p>
@@ -49,7 +49,7 @@
         <i class="fa fa-money" aria-hidden="true"></i></span>
 
 
-      <%= f.text_field :amount, class: 'form-control', 'aria-describedby': 'basic-addon1', value: "5000",  disabled: false %>
+      <%= f.text_field :amount, class: 'form-control disabled', 'aria-describedby': 'basic-addon1', value: "5000",  disabled: false, :required => true %>
 
      <!--  <input type="text" class="form-control" placeholder="08099223047" aria-describedby="basic-addon1" disabled> -->
   
@@ -59,7 +59,7 @@
       <span class="input-group-addon" id="basic-addon1">
         <i class="fa fa-shield" aria-hidden="true"></i></span>
 
-         <%= f.text_field :plan, value: 'Bronze', placeholder: "Bronze", class: 'form-control', 'aria-describedby': 'basic-addon1' , disabled: false %>
+         <%= f.text_field :plan, value: 'Bronze', placeholder: "Bronze", class: 'form-control disabled', 'aria-describedby': 'basic-addon1' , disable: false, :required => true %>
       <!-- 
       <input type="text" class="form-control" placeholder="Bank Name" aria-describedby="basic-addon1" value=""> -->
     </div>
@@ -96,7 +96,12 @@
 <!-- 	        <button type="button" class="btn btn-primary">Save changes</button> -->
 	      </div>
       <% end %> 
+      <script >
+        $(".donateForm").validate();
+        $('input').attr('readonly', 'readonly');
 
+
+      </script>
     </div>
   </div>
 </div>
@@ -172,7 +177,7 @@
         <i class="fa fa-money" aria-hidden="true"></i></span>
 
 
-      <%= f.text_field :amount, value: "10000", placeholder: "10,000", class: 'form-control', 'aria-describedby': 'basic-addon1', disabled: false %>
+      <%= f.text_field :amount, value: "10000", placeholder: "10,000", class: 'form-control disabled', 'aria-describedby': 'basic-addon1', disabled: false, :required => true %>
 
      <!--  <input type="text" class="form-control" placeholder="08099223047" aria-describedby="basic-addon1" disabled> -->
   
@@ -182,7 +187,7 @@
       <span class="input-group-addon" id="basic-addon1">
         <i class="fa fa-shield" aria-hidden="true"></i></span>
 
-         <%= f.text_field :plan, value: 'Silver', placeholder: "Silver", class: 'form-control', 'aria-describedby': 'basic-addon1' , disabled: false %>
+         <%= f.text_field :plan, value: 'Silver', placeholder: "Silver", class: 'form-control disabled', 'aria-describedby': 'basic-addon1' , disabled: false, :required => true %>
       <!-- 
       <input type="text" class="form-control" placeholder="Bank Name" aria-describedby="basic-addon1" value=""> -->
     </div>
@@ -274,7 +279,7 @@
         <i class="fa fa-money" aria-hidden="true"></i></span>
 
 
-      <%= f.text_field :amount, value: "20000", placeholder: "20,000", class: 'form-control', 'aria-describedby': 'basic-addon1', disabled: false %>
+      <%= f.text_field :amount, value: "20000", placeholder: "20,000", class: 'form-control disabled', 'aria-describedby': 'basic-addon1', disabled: false, :required => true %>
 
      <!--  <input type="text" class="form-control" placeholder="08099223047" aria-describedby="basic-addon1" disabled> -->
   
@@ -284,7 +289,7 @@
       <span class="input-group-addon" id="basic-addon1">
         <i class="fa fa-shield" aria-hidden="true"></i></span>
 
-         <%= f.text_field :plan, value: 'Gold', placeholder: "Gold", class: 'form-control', 'aria-describedby': 'basic-addon1' , disabled: false %>
+         <%= f.text_field :plan, value: 'Gold', placeholder: "Gold", class: 'form-control disabled', 'aria-describedby': 'basic-addon1' , disabled: false, :required => true %>
       <!-- 
       <input type="text" class="form-control" placeholder="Bank Name" aria-describedby="basic-addon1" value=""> -->
     </div>
@@ -351,7 +356,7 @@
         <i class="fa fa-money" aria-hidden="true"></i></span>
 
 
-      <%= f.text_field :amount, value: "50000", placeholder: "50,000", class: 'form-control', 'aria-describedby': 'basic-addon1', disabled: false %>
+      <%= f.text_field :amount, value: "50000", placeholder: "50,000", class: 'form-control disabled', 'aria-describedby': 'basic-addon1', disabled: false, :required => true %>
 
      <!--  <input type="text" class="form-control" placeholder="08099223047" aria-describedby="basic-addon1" disabled> -->
   
@@ -361,7 +366,7 @@
       <span class="input-group-addon" id="basic-addon1">
         <i class="fa fa-shield" aria-hidden="true"></i></span>
 
-         <%= f.text_field :plan, value: 'Platinum', placeholder: "Platinum", class: 'form-control', 'aria-describedby': 'basic-addon1' , disabled: false %>
+         <%= f.text_field :plan, value: 'Platinum', placeholder: "Platinum", class: 'form-control disabled', 'aria-describedby': 'basic-addon1' , disabled: false, :required => true %>
       <!--  
       <input type="text" class="form-control" placeholder="Bank Name" aria-describedby="basic-addon1" value=""> -->
     </div>

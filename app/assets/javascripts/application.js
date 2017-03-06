@@ -20,6 +20,7 @@
 //= require js/bootstrap.min
 //= require js/plugins
 //= require js/main
+//= require jquery.validate
 
 //= require toastr
 

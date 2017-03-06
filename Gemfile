@@ -46,6 +46,10 @@ gem "gritter", "1.2.0"
 #add toastr gem for notifications
 gem 'toastr-rails'
 
+
+#Add jquery validation library
+gem 'jquery-validation-rails'
+
 group :development, :test do
   gem 'sqlite3', '1.3.12'
   gem 'byebug',  '9.0.0', platform: :mri
