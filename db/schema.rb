@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306172156) do
+ActiveRecord::Schema.define(version: 20170307202750) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "member_id"
@@ -29,9 +29,10 @@ ActiveRecord::Schema.define(version: 20170306172156) do
     t.string   "plan"
     t.integer  "member_id"
     t.text     "comment"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "status",     default: "waiting"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "status",       default: "waiting"
+    t.integer  "recipient_id"
     t.index ["member_id", "plan"], name: "index_donations_on_member_id_and_plan"
     t.index ["member_id"], name: "index_donations_on_member_id"
   end

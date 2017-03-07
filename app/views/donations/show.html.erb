@@ -21,12 +21,12 @@
                 </div>
             </a>
         </li>
-        <li role="step" class="<%= 'active' if @donation.status == 'paid' %>">
+        <li role="step" class="<%= 'active' if @donation.status == 'matched' %>">
             <a href="#step2" role="tab" id="step2-tab" data-toggle="tab" aria-controls="profile">
                 <div class="icon fa fa-credit-card"></div>
                 <div class="heading">
-                    <div class="title">Payment Completed</div>
-                    <div class="description">You made payment.</div>
+                    <div class="title">Matched Request</div>
+                    <div class="description">You have been matched to donate</div>
                 </div>
             </a>
         </li>
@@ -54,8 +54,8 @@
         <div role="tabpanel" class="tab-pane <%= 'active' if @donation.status == 'waiting' %>" id="step1">
             <b>Step1</b> : <i>You have requested to Donate. Kindly wait to be matched with another participant. Match times may vary. <b> It is important to Log in regularly to check the status of your Donation.</b> </i>
         </div>
-        <div role="tabpanel" class="tab-pane  <%= 'active' if @donation.status == 'paid' %>" id="step2">
-            <b>Step2</b> : <i>You have made Payment. Kindly wait for recipient to confirm reception of your donation. Calling or texting recipient can also get you faster confirmation.  <b>Note: </b>"Be polite".</i>
+        <div role="tabpanel" class="tab-pane  <%= 'active' if @donation.status == 'matched' %>" id="step2">
+            <b>Step2</b> : <i>You have been matched to make Payment. Kindly obtain recipient details below and complete your donation. Calling or texting recipient can also get you faster confirmation.  <b>Note: </b>"Be polite".</i>
         </div>
         <div role="tabpanel" class="tab-pane  <%= 'active' if @donation.status == 'confirmed' %>" id="step3">
             <b>Step3</b> : <i>Your Donation has been confirmed. You can now receive <b>200%</b> of your initial Donation. Click on the "Redeem Donation" Button to receive your 200%.</i>
