@@ -9,16 +9,41 @@
 
       <div class="card">
         <div class="card-header">
-         <h3><%=donation.plan%> Plan (<%=donation.amount%>)</h3> <span class="small"> <br/><br/> <i> - Created: <%=time_ago_in_words(donation.created_at)%> ago,</i></span>
+         <h3><%=donation.plan%> Plan (<%=donation.amount%>)</h3> <span class="small"> <br/><br/> <i> - Created: <%=time_ago_in_words(donation.created_at)%> ago,</i></span> 
         </div>
         <div class="card-body">
           <div class="section">
-            <div class="section-title">Donation Progress <i>(<%=donation.status%>)</i></div>
+            <div class="section-title">Donation Progress <i>(<%=donation.status%>)</i> </div>
+
+        <% if donation.status == 'confirmed' %>
+
+            <%= form_for @withdrawal, :url => {:controller => :withdrawals, :action => :create} do |t| %>
+
+                 <div class="pull-right"><div class="text-right">   
+                   <!--      <a href="#" class="btn btn-warning">Redeem (200%)</a> -->
+                        <%= t.hidden_field :plan, value: donation.plan %>
+                        <%= t.hidden_field :amount, value: donation.amount %>
+                        <%= t.hidden_field :status, value: 'waiting' %>
+                        <%= t.hidden_field :donation_id, value: donation.id %>
+                        <%= t.submit "Redeem(200%)", class: "btn btn-warning" %>
+
+                </div> </div>
+
+             <% end %>
+        <% elsif donation.status == 'completed' %>
+                   <div class="pull-right"><div class="text-right">   
+                        <button class="btn btn-success disabled"><i>Withdrawn</i></button>
+                   
+                </div> </div>
+
+        <% end %>
+
+
             <div class="section-body">
-              <div class="step">
+              <div class="<%= get_state_color(donation.status) %>">
     <ul class="nav nav-tabs nav-justified" role="tablist">
         <li role="step" class="<%= 'active' if donation.status == 'waiting' %>">
-            <a href="#step1" id="step1-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">
+            <a href="#" id="step1-tab" role="tab" data-toggle="" aria-controls="home" aria-expanded="true">
                 <div class="icon fa fa-sign-in"></div>
                 <div class="heading">
                     <div class="title">Request to Donate</div>
@@ -26,17 +51,17 @@
                 </div>
             </a>
         </li>
-        <li role="step" class="<%= 'active' if donation.status == 'paid' %>">
-            <a href="#step2" role="tab" id="step2-tab" data-toggle="tab" aria-controls="profile">
+       <li role="step" class="<%= 'active' if donation.status == 'matched' %>">
+            <a href="#" role="tab" id="step2-tab" data-toggle="" aria-controls="profile">
                 <div class="icon fa fa-credit-card"></div>
                 <div class="heading">
-                    <div class="title">Payment Completed</div>
-                    <div class="description">You made payment.</div>
+                    <div class="title">Matched Request</div>
+                    <div class="description">You have been matched to donate</div>
                 </div>
             </a>
         </li>
         <li role="step" class="<%= 'active' if donation.status == 'confirmed' %>">
-            <a href="#step3" role="tab" id="step3-tab" data-toggle="tab" aria-controls="profile">
+            <a href="#" role="tab" id="step3-tab" data-toggle="" aria-controls="profile">
                 <div class="icon fa fa-check"></div>
                 <div class="heading">
                     <div class="title">Payment Confirmed</div>
@@ -45,11 +70,11 @@
             </a>
         </li>
         <li role="step" class="<%= 'active' if donation.status == 'completed' %>">
-            <a href="#step4" role="tab" id="step4-tab" data-toggle="tab" aria-controls="profile">
+            <a href="#" role="tab" id="step4-tab" data-toggle="" aria-controls="profile">
                 <div class="icon fa fa-truck "></div>
                 <div class="heading">
                     <div class="title">Successfully Withdrawn</div>
-                    <div class="description">successfully received 200%</div>
+                    <div class="description">withdrawn (redeemed)</div>
                 </div>
             </a>
         </li>
@@ -59,14 +84,14 @@
         <div role="tabpanel" class="tab-pane <%= 'active' if donation.status == 'waiting' %>" id="step1">
             <b>Step1</b> : <i>You have requested to Donate. Kindly wait to be matched with another participant. Match times may vary. <b> It is important to Log in regularly to check the status of your Donation.</b> </i>
         </div>
-        <div role="tabpanel" class="tab-pane  <%= 'active' if donation.status == 'paid' %>" id="step2">
-            <b>Step2</b> : <i>You have made Payment. Kindly wait for recipient to confirm reception of your donation. Calling or texting recipient can also get you faster confirmation.  <b>Note: </b>"Be polite".</i>
+        <div role="tabpanel" class="tab-pane  <%= 'active' if donation.status == 'matched' %>" id="step2">
+            <b>Step2</b> : <i>You have been matched to make Payment. Kindly obtain recipient details below and complete your donation. Calling or texting recipient can also get you faster confirmation.  <b>Note: </b>"Be polite".</i>
         </div>
         <div role="tabpanel" class="tab-pane  <%= 'active' if donation.status == 'confirmed' %>" id="step3">
             <b>Step3</b> : <i>Your Donation has been confirmed. You can now receive <b>200%</b> of your initial Donation. Click on the "Redeem Donation" Button to receive your 200%.</i>
         </div>
         <div role="tabpanel" class="tab-pane  <%= 'active' if donation.status == 'completed' %>" id="step4">
-            <b>Step4</b> <i>: Successfully Withdrawn. (<b>This donation has been redeemed in full. Kindly create new donations to earn more </b>)</i>
+            <b>Step4</b> <i>: Successfully Withdrawn. (<b>This donation has been redeemed. You can check progress of withdrawn funds on withdrawals page. Kindly create new donations to earn more </b>)</i>
         </div>
     </div>
 </div>

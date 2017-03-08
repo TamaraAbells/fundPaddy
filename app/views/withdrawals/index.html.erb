@@ -1,0 +1,69 @@
+
+<% provide(:page_title, "Your Withdrawals") %>
+<div class="row">
+
+    <% @withdrawals.each do |withdrawal| %>
+
+    <div class="col-sm-12 col-xs-12">
+
+
+      <div class="card">
+        <div class="card-header">
+         <h3><%=withdrawal.plan%> Plan (<%=withdrawal.amount%>)</h3> <span class="small"> <br/><br/> <i> - Created: <%=time_ago_in_words(withdrawal.created_at)%> ago,</i></span>
+        </div>
+        <div class="card-body">
+          <div class="section">
+            <div class="section-title">Withdrawal Progress <i>(<%=withdrawal.status%>)</i></div>
+            <div class="section-body">
+              <div class="withdraw-step">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li role="step" class="<%= 'active' if withdrawal.status == 'waiting' %>">
+            <a href="#" id="step1-tab" role="tab" data-toggle="" aria-controls="home" aria-expanded="true">
+                <div id="withdraw-step" class="icon fa fa-sign-in"></div>
+                <div class="heading">
+                    <div class="title">Withdraw Request Created</div>
+                    <div class="description">waiting to be matched</div>
+                </div>
+            </a>
+        </li>
+        <li role="step" class="<%= 'active' if withdrawal.status == 'matched' %>">
+            <a href="#" role="tab" id="step2-tab" data-toggle="" aria-controls="profile">
+                <div class="icon fa fa-credit-card"></div>
+                <div class="heading">
+                    <div class="title">Withdrawal Request Matched</div>
+                    <div class="description">Your request has been matched.</div>
+                </div>
+            </a>
+        </li>
+
+        <li role="step" class="<%= 'active' if withdrawal.status == 'completed' %>">
+            <a href="#" role="tab" id="step3-tab" data-toggle="" aria-controls="profile">
+                <div class="icon fa fa-check "></div>
+                <div class="heading">
+                    <div class="title">Successfully Withdrawn</div>
+                    <div class="description">successfully received 200%</div>
+                </div>
+            </a>
+        </li>
+    </ul>
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane <%= 'active' if withdrawal.status == 'waiting' %>" id="step1">
+            <b>Step1</b> : <i>Your Withdrawal request is being processed. Kindly wait to be matched to receive 200%. <br/><b> It is important to Log in regularly to check the status of your Withdrawal.</b> </i>
+        </div>
+        <div role="tabpanel" class="tab-pane  <%= 'active' if withdrawal.status == 'matched' %>" id="step2">
+            <b>Step2</b> : <i>Your withdrawal request has been  matched. Expect payment from members below: Calling or texting appropriate donor can be helpful.  <b>Note: </b>"Be polite".</i>
+        </div>
+        <div role="tabpanel" class="tab-pane  <%= 'active' if withdrawal.status == 'completed' %>" id="step3">
+            <b>Step3</b> : <i>Your Withdrawal request has been processed. You have now received <b>200%</b> of your initial Donation. Create new donations or share your ref link to earn more.</i>
+        </div>
+     <!--  -->
+    </div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    
+
+  </div>  <% end %> </div>

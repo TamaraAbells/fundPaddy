@@ -90,15 +90,6 @@
   <body>
 
 
-     <% unless flash.empty? %>
-    <script type="text/javascript">
-        <% flash.each do |f| %>
-        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-         toastr['<%= type %>']('<%= f[1] %>');
-        <% end %>
-    </script>
-   <% end %>
-
 
 <div class="app app-default">
 
@@ -127,8 +118,8 @@
           <div class="title">Donations</div>
         </a>
       </li>
-       <li class="@@menu.messaging">
-        <a href="<%=member_donations_path(current_member)%>">
+       <li class="<%= 'active' if current_page?(member_withdrawals_path(current_member)) %>">
+        <a href="<%=member_withdrawals_path(current_member)%>">
           <div class="icon">
             <i class="fa fa-sort-amount-asc" aria-hidden="true"></i>
           </div>
@@ -393,6 +384,19 @@
 </footer>
 </div>
 </div>
+
+
+
+     <% unless flash.empty? %>
+    <script type="text/javascript">
+        <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+         toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+    </script>
+   <% end %>
+
+   
 
     
     <%= debug(params) if Rails.env.development? %>

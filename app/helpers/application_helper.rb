@@ -10,6 +10,16 @@ module ApplicationHelper
 		end
 	end
 
+	def get_state_color(status)
+		if (status == 'waiting') || (status == 'matched')
+			return 'pending-step'
+		else 
+			return 'step'
+		end
+			
+
+	end
+
 
 	# def active_link_to(name = nil, options = nil, html_options = nil, &block)
 	#   active_class = html_options[:active] || "active"

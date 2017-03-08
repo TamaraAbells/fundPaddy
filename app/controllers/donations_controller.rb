@@ -7,8 +7,11 @@ layout 'office'
 before_action :authenticate_member!
 
   def index
-    @donations = current_member.donations
+    @donations = current_member.donations.order(created_at: :desc)
     @member = current_member
+
+    @withdrawal = current_member.withdrawals.new
+
   end
 
   def new

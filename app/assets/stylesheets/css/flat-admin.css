@@ -4584,6 +4584,313 @@ table.table.card-table {
     .nav-tabs > li a, .nav-tabs > li a:focus, .nav-tabs > li a:hover {
       padding: 15px; } }
 
+
+
+
+
+
+
+
+/* new withdraw steps color */
+
+
+.withdraw-step .nav-tabs {
+  border-bottom: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  border-radius: 1px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  position: relative; }
+  .withdraw-step .nav-tabs > li {
+    border-right: 0;
+    z-index: 2;
+    -ms-flex: 1;
+        flex: 1;
+    margin-bottom: 0px;
+    position: relative;
+    overflow: hidden; }
+    .withdraw-step .nav-tabs > li[class^="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+      border-radius: 0; }
+    .withdraw-step .nav-tabs > li > a, .withdraw-step .nav-tabs > li uib-tab-heading {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      border: 0;
+      padding: 2rem;
+      padding-left: 0;
+      z-index: 2;
+      color: #c8d1d3; }
+      .withdraw-step .nav-tabs > li > a .icon, .withdraw-step .nav-tabs > li uib-tab-heading .icon {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        font-size: 2.5em;
+        margin-right: 0.5em;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        border-radius: 50%;
+        background-color: #ffbc11;
+        color: #FFF; }
+      .withdraw-step .nav-tabs > li > a .heading, .withdraw-step .nav-tabs > li uib-tab-heading .heading {
+        -ms-flex: 1;
+            flex: 1;
+        text-align: left;
+        overflow: hidden; }
+        .withdraw-step .nav-tabs > li > a .heading .title, .withdraw-step .nav-tabs > li uib-tab-heading .heading .title {
+          font-weight: bold;
+          font-size: 1.1em;
+          margin-bottom: 1rem;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .withdraw-step .nav-tabs > li > a .heading .description, .withdraw-step .nav-tabs > li uib-tab-heading .heading .description {
+          font-size: 0.8em;
+          margin-bottom: 0.5rem;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+      .withdraw-step .nav-tabs > li > a:hover, .withdraw-step .nav-tabs > li uib-tab-heading:hover {
+        border: 0;
+        background-color: transparent; }
+    .withdraw-step .nav-tabs > li.active > a, .withdraw-step .nav-tabs > li.active > a:focus, .withdraw-step .nav-tabs > li.active > a:hover, .withdraw-step .nav-tabs > li.active uib-tab-heading {
+      background-color: transparent;
+      border: 0;
+      color: #ffbc11; }
+    .withdraw-step .nav-tabs > li.active > a:hover {
+      cursor: pointer; }
+    .withdraw-step .nav-tabs > li.active ~ li > a, .withdraw-step .nav-tabs > li.active ~ li > a:focus, .withdraw-step .nav-tabs > li.active ~ li > a:hover, .withdraw-step .nav-tabs > li.active ~ li uib-tab-heading {
+      color: #c8d1d3; }
+      .withdraw-step .nav-tabs > li.active ~ li > a .icon, .withdraw-step .nav-tabs > li.active ~ li > a:focus .icon, .withdraw-step .nav-tabs > li.active ~ li > a:hover .icon, .withdraw-step .nav-tabs > li.active ~ li uib-tab-heading .icon {
+        background-color: #c8d1d3;
+        color: #FFF; }
+    .withdraw-step .nav-tabs > li.active ~ li > a, .withdraw-step .nav-tabs > li.active ~ li > a:focus, .withdraw-step .nav-tabs > li.active ~ li > a:hover, .withdraw-step .nav-tabs > li.active ~ li uib-tab-heading {
+      color: #c8d1d3; }
+    .withdraw-step .nav-tabs > li.active ~ li:after {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      display: block;
+      height: 4px;
+      border-radius: 0px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 100%;
+      background-color: #dfe6e8; }
+    .withdraw-step .nav-tabs > li:last-child {
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 1px; }
+      .withdraw-step .nav-tabs > li:last-child:before, .withdraw-step .nav-tabs > li:last-child:after {
+        display: none; }
+  .withdraw-step .nav-tabs:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 100%;
+    background-color: #ffbc11; }
+
+.withdraw-step .tab-content > div {
+  padding: 0; }
+
+@media (max-width: 767px) {
+  .withdraw-step .nav-tabs > li > a, .withdraw-step .nav-tabs > li uib-tab-heading {
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding: 0; }
+    .withdraw-step .nav-tabs > li > a .icon, .withdraw-step .nav-tabs > li uib-tab-heading .icon {
+      margin-right: 0; }
+    .withdraw-step .nav-tabs > li > a .heading, .withdraw-step .nav-tabs > li uib-tab-heading .heading {
+      display: none; } }
+
+
+
+
+
+/* end of withdraw step */
+
+/* beginning of new pending step */
+
+
+
+.pending-step .nav-tabs {
+  border-bottom: 0px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  border-radius: 1px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  position: relative; }
+  .pending-step .nav-tabs > li {
+    border-right: 0;
+    z-index: 2;
+    -ms-flex: 1;
+        flex: 1;
+    margin-bottom: 0px;
+    position: relative;
+    overflow: hidden; }
+    .pending-step .nav-tabs > li[class^="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+      border-radius: 0; }
+    .pending-step .nav-tabs > li > a, .pending-step .nav-tabs > li uib-tab-heading {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+      border: 0;
+      padding: 2rem;
+      padding-left: 0;
+      z-index: 2;
+      color: #18aa4a; }
+      .pending-step .nav-tabs > li > a .icon, .pending-step .nav-tabs > li uib-tab-heading .icon {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+        -ms-flex-align: center;
+            align-items: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        font-size: 2.5em;
+        margin-right: 0.5em;
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        border-radius: 50%;
+        background-color: #39c3da;
+        color: #FFF; }
+      .pending-step .nav-tabs > li > a .heading, .pending-step .nav-tabs > li uib-tab-heading .heading {
+        -ms-flex: 1;
+            flex: 1;
+        text-align: left;
+        overflow: hidden; }
+        .pending-step .nav-tabs > li > a .heading .title, .pending-step .nav-tabs > li uib-tab-heading .heading .title {
+          font-weight: bold;
+          font-size: 1.1em;
+          margin-bottom: 1rem;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .pending-step .nav-tabs > li > a .heading .description, .pending-step .nav-tabs > li uib-tab-heading .heading .description {
+          font-size: 0.8em;
+          margin-bottom: 0.5rem;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+      .pending-step .nav-tabs > li > a:hover, .pending-step .nav-tabs > li uib-tab-heading:hover {
+        border: 0;
+        background-color: transparent; }
+    .pending-step .nav-tabs > li.active > a, .pending-step .nav-tabs > li.active > a:focus, .pending-step .nav-tabs > li.active > a:hover, .pending-step .nav-tabs > li.active uib-tab-heading {
+      background-color: transparent;
+      border: 0;
+      color: #39c3da; }
+    .pending-step .nav-tabs > li.active > a:hover {
+      cursor: pointer; }
+    .pending-step .nav-tabs > li.active ~ li > a, .pending-step .nav-tabs > li.active ~ li > a:focus, .pending-step .nav-tabs > li.active ~ li > a:hover, .pending-step .nav-tabs > li.active ~ li uib-tab-heading {
+      color: #c8d1d3; }
+      .pending-step .nav-tabs > li.active ~ li > a .icon, .pending-step .nav-tabs > li.active ~ li > a:focus .icon, .pending-step .nav-tabs > li.active ~ li > a:hover .icon, .pending-step .nav-tabs > li.active ~ li uib-tab-heading .icon {
+        background-color: #c8d1d3;
+        color: #FFF; }
+    .pending-step .nav-tabs > li.active ~ li > a, .pending-step .nav-tabs > li.active ~ li > a:focus, .pending-step .nav-tabs > li.active ~ li > a:hover, .pending-step .nav-tabs > li.active ~ li uib-tab-heading {
+      color: #c8d1d3; }
+    .pending-step .nav-tabs > li.active ~ li:after {
+      content: '';
+      z-index: 1;
+      position: absolute;
+      display: block;
+      height: 4px;
+      border-radius: 0px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 100%;
+      background-color: #c8d1d3; }
+    .pending-step .nav-tabs > li:last-child {
+      border-top-right-radius: 1px;
+      border-bottom-right-radius: 1px; }
+      .pending-step .nav-tabs > li:last-child:before, .pending-step .nav-tabs > li:last-child:after {
+        display: none; }
+  .pending-step .nav-tabs:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    width: 100%;
+    background-color: #39c3da; }
+
+.pending-step .tab-content > div {
+  padding: 0; }
+
+@media (max-width: 767px) {
+  .pending-step .nav-tabs > li > a, .pending-step .nav-tabs > li uib-tab-heading {
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding: 0; }
+    .pending-step .nav-tabs > li > a .icon, .pending-step .nav-tabs > li uib-tab-heading .icon {
+      margin-right: 0; }
+    .pending-step .nav-tabs > li > a .heading, .pending-step .nav-tabs > li uib-tab-heading .heading {
+      display: none; } }
+
+
+/* end of pending step */
+
 .step .nav-tabs {
   border-bottom: 0px;
   margin-left: 0;

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307202750) do
+ActiveRecord::Schema.define(version: 20170308092506) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "member_id"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 20170307202750) do
     t.string   "fullname"
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
+  end
+
+  create_table "withdrawals", force: :cascade do |t|
+    t.string   "plan"
+    t.integer  "amount"
+    t.string   "status"
+    t.integer  "member_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "donation_id"
+    t.index ["member_id", "status"], name: "index_withdrawals_on_member_id_and_status"
+    t.index ["member_id"], name: "index_withdrawals_on_member_id"
   end
 
 end

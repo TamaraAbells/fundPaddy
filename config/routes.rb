@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :members do
   	resources :donations
+    resources :withdrawals
   end
 
   get 'office/settings'
