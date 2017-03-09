@@ -14,6 +14,8 @@ class WithdrawalsController < ApplicationController
   def show
   end
 
+  
+
   def create
     @withdrawal = current_member.withdrawals.build(withdrawal_params)
 

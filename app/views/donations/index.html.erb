@@ -2,6 +2,22 @@
 <% provide(:page_title, "Your Donations") %>
 <div class="row">
 
+    <% if @donations.empty? %>
+
+    <div class="col-sm-12 col-xs-12">
+
+
+      <div class="card">
+        <div class="card-header">
+         <h3>No Donations Yet</h3> <span class="small"> <br/><br/> <i>click (+) on top menu to create donation</i></span> 
+        </div>
+        <div class="card-body">
+          <div class="section">
+            <div class="section-title">Kindly create a new Donation by clicking on the (+) Plus Sign on the top Menu or  <a href="<%=new_member_donation_path(current_member)%>"> Click Here </a></i> </div>
+            </div></div></div></div>
+    <% else %>
+
+
     <% @donations.each do |donation| %>
 
     <div class="col-sm-12 col-xs-12">
@@ -86,6 +102,217 @@
         </div>
         <div role="tabpanel" class="tab-pane  <%= 'active' if donation.status == 'matched' %>" id="step2">
             <b>Step2</b> : <i>You have been matched to make Payment. Kindly obtain recipient details below and complete your donation. Calling or texting recipient can also get you faster confirmation.  <b>Note: </b>"Be polite".</i>
+
+
+
+            <% if donation.status == 'matched' %>
+                <% recipient = get_recipient_info(donation) %>
+    
+
+
+                <hr/>
+
+                <div class="row"> 
+                    <div class="col-sm-6 col-xs-6">
+                        <div class="user-info">
+                                <%= gravatar_for(recipient)%>
+                            <h5><%= recipient.fullname %> <span class="badge badge-<%=get_badge_status(donation.pay_status)%>"> <%= donation.pay_status %> </span></h5>  <br/>
+                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myDetailsModal">View Details</button>
+
+
+                            <!-- view details modal -->
+                            <!-- Modal -->
+                <div class="modal modal-wide " id="myDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myDetailsModalLabel" aria-hidden="true">
+                  <div class="modal-dialog ezCustTrans">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myDetailsModalLabel">Recipient Details </h4> <span class="small" style="color:green"> <i> (<b>Warning:</b>Donor-Recipient communication is key for a smooth donation process.</i></span>
+                      </div>
+
+                     
+                          <div class="modal-body">
+                        <p class="small"> Find below the Recipient details. view <a href="#" target="_blank"> terms & conditions</a></p>
+                             <div class="row">
+                      
+                      <%=gravatar_for(recipient) %>
+
+
+                      <div class="col-md-6">
+                    
+                      <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-money" aria-hidden="true"></i></span>
+
+                        <%= recipient.fullname %>
+                  
+                    </div>
+
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-shield" aria-hidden="true"></i></span>
+                            <%= recipient.accounts.first.phone %>
+                    </div>
+
+                       <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-bank" aria-hidden="true"></i></span>
+                            <%= donation.amount %>
+                    </div>
+
+
+
+                   
+                  </div>
+                 <div class="col-md-6">
+                    <!--  <select class="select2 form-control">
+                      <option value="NA">Select Country</option>
+                      <option value="NG">Nigeria</option>
+                      <option value="SA">South Africa</option>
+                      <option value="GH">Ghana</option>
+                    </select>
+                     -->
+
+                Email: <span style="color:brown"> <%= recipient.email %> </span>
+
+                 <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-bank" aria-hidden="true"></i></span>
+                            <%= recipient.accounts.first.bank_name %>
+                    </div>
+                 </div>
+
+                   <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-user" aria-hidden="true"></i></span>
+                            <%= recipient.accounts.first.acc_name %>
+                    </div>
+                 </div>
+
+                   <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-kite" aria-hidden="true"></i></span>
+                            <%= recipient.accounts.first.acc_no %>
+                    </div>
+                 </div>
+
+
+                </div>
+
+
+
+
+
+                          </div>
+                          <div class="modal-footer">
+                
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
+                          </div>
+                     </div>
+
+
+          </div>
+         </div>
+
+                    <div class="col-sm-6 col-xs-6">
+                        <div class="user-info">
+
+                            <h5><span class="badge badge-<%=get_badge_status(donation.pay_status)%>"> <%= donation.pay_status %> </span> </h5>  <br/>
+                            
+                           <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myPaymentModal">I Have Made Payment</button>
+                   
+
+
+
+
+
+
+                            <!-- view details modal -->
+                            <!-- Modal -->
+                <div class="modal modal-wide " id="myPaymentModal" tabindex="-1" role="dialog" aria-labelledby="myPaymentModalLabel" aria-hidden="true">
+                  <div class="modal-dialog ezCustTrans">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myPaymentModalLabel">Payment Details </h4> <span class="small" style="color:green"> <i> (<b>Note:</b>uploading a proof of payment is optional </i></span>
+                      </div>
+
+
+                      
+                          <div class="modal-body">
+                        <p class="small"> Find below the donor details. view <a href="#" target="_blank"> terms & conditions</a></p>
+                             <div class="row">
+                      
+                            <%=gravatar_for(recipient) %>
+
+
+                      <div class="col-md-6">
+                    
+                      <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1">
+                        <i class="fa fa-money" aria-hidden="true"></i></span>
+
+                        <%= recipient.fullname %>
+                  
+                    </div>
+
+
+                   
+                  </div>
+                 <div class="col-md-6">
+                    
+                    <!--  <select class="select2 form-control">
+                      <option value="NA">Select Country</option>
+                      <option value="NG">Nigeria</option>
+                      <option value="SA">South Africa</option>
+                      <option value="GH">Ghana</option>
+                    </select>
+                     -->
+
+
+
+                 </div>
+
+
+                </div>
+
+
+
+
+
+                          </div>
+                          <div class="modal-footer">
+                
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        
+                          </div>
+                     </div>
+                  </div>
+                </div>
+
+                </div>
+
+
+
+
+
+                    </div>
+
+                </div>
+            <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
         </div>
         <div role="tabpanel" class="tab-pane  <%= 'active' if donation.status == 'confirmed' %>" id="step3">
             <b>Step3</b> : <i>Your Donation has been confirmed. You can now receive <b>200%</b> of your initial Donation. Click on the "Redeem Donation" Button to receive your 200%.</i>
@@ -101,4 +328,4 @@
       </div> 
     
 
-  </div>  <% end %> </div>
+  </div>  <% end %> <% end %> </div>

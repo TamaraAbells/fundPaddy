@@ -1,0 +1,36 @@
+ <% provide(:page_title, "Dispatcher Logs") %>
+ 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+         Admin ONly
+        </div>
+    <div class="card-body">
+
+                <div class="row">
+                  
+                  <div class="col-md-6">
+                  <% results = withdrawal_dispatcher(@unmatched_withdrawals, @available_donations) %>
+                  <%= results %>
+                   </div>
+                
+                  <div class="col-md-6">
+                    <a href="#" class="btn btn-block btn-info"> Block TimedOut Donations </a>
+               
+
+                  </div>
+            
+              </div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+  

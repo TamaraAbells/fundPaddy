@@ -46,6 +46,35 @@ before_action :authenticate_member!
   def destroy
   end
 
+  def donation_confirm
+    
+    if (params[:complete] && params[:withdrawal_id])
+      withdrawal_id = params[:withdrawal_id]
+        withdrawal = Withdrawal.find(withdrawal_id)
+        withdrawal.update(status: 'completed')
+    end
+
+
+    if params[:donation_id]
+
+        donation_id = params[:donation_id]
+
+        donation = Donation.find(donation_id)
+        if donation.update(status: 'confirmed')
+          flash[:notice] = "Payment confirmed"
+          redirect_to member_withdrawals_path(current_member)
+
+        else
+          flash[:error] = "There was a problem confirming this payment. Try again"
+          redirect_to member_withdrawals_path(current_member)
+        end
+    else
+        flash[:error] = "Unauthorized Access"
+        redirect_to member_withdrawals_path(current_member)
+    end
+
+  end
+
   private 
   def donation_params
     params.require(:donation).permit(:amount, :plan, :comment)

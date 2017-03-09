@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   end
 
   get 'office/settings'
-  
+
+  get 'donation/confirm', to: 'donations#donation_confirm', as: 'donation_confirmation'
+
+  get 'office/restricted', to: 'office#restricted', as: 'restricted'
+
+  get 'office/dispatcher', to: 'office#dispatcher', as: 'dispatcher'
+
   resources :accounts
   
 
