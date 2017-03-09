@@ -46,6 +46,30 @@ before_action :authenticate_member!
   def destroy
   end
 
+  def payment_conf
+
+    @donation = Donation.find(params[:donation_id])
+    pop = params[:pop]
+    payment_text = params[:payment_text]
+
+    if params[:pay_status]
+        paystatus = params[:pay_status]
+
+        if @donation.update(pay_status: paystatus, payment_text: payment_text, pop: pop)
+          flash[:notice] = "Payment processed. Kindly wait for confirmation"
+          redirect_to member_donations_path(current_member)
+        else
+          flash[:error] = "Sorry we could not process your payment upload"
+          redirect_to member_donations_path(current_member)
+        end
+    else
+
+      flash[:notice] = "Unauthorized"
+      redirect_to member_donations_path(current_member)
+    end
+
+  end
+
   def donation_confirm
     
     if (params[:complete] && params[:withdrawal_id])
@@ -77,6 +101,6 @@ before_action :authenticate_member!
 
   private 
   def donation_params
-    params.require(:donation).permit(:amount, :plan, :comment)
+    params.require(:donation).permit(:amount, :plan, :comment, :pop, :payment_text, :payment_status)
   end
 end

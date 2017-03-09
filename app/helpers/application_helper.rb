@@ -82,7 +82,7 @@ module ApplicationHelper
 	end
 
 	def get_recipient_info(donation)
-		recipient = Member.find_by_id(donation.id)
+		recipient = Member.find_by_id(donation.recipient_id)
 		recipient
 
 	end

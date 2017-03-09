@@ -113,11 +113,14 @@
                 <hr/>
 
                 <div class="row"> 
+
                     <div class="col-sm-6 col-xs-6">
                         <div class="user-info">
                                 <%= gravatar_for(recipient)%>
-                            <h5><%= recipient.fullname %> <span class="badge badge-<%=get_badge_status(donation.pay_status)%>"> <%= donation.pay_status %> </span></h5>  <br/>
+                            <h5><%= recipient.fullname %> <span class="badge badge-<%=get_badge_status(donation.status)%>"> <%= donation.status %> </span></h5>  <br/>
                              <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myDetailsModal">View Details</button>
+                           
+
 
 
                             <!-- view details modal -->
@@ -127,43 +130,57 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title" id="myDetailsModalLabel">Recipient Details </h4> <span class="small" style="color:green"> <i> (<b>Warning:</b>Donor-Recipient communication is key for a smooth donation process.</i></span>
+                        <h4 class="modal-title" id="myDetailsModalLabel">Recipient Details </h4> <span class="small" style="color:green"> <i> (<b>Note:</b>Donor-Recipient communication is key for a smooth donation process.</i></span>
                       </div>
 
                      
                           <div class="modal-body">
-                        <p class="small"> Find below the Recipient details. view <a href="#" target="_blank"> terms & conditions</a></p>
-                             <div class="row">
+                        <p class="small"> Find below the Recipient details. Make payment and comfirm. view <a href="#" target="_blank"> terms & conditions</a></p>
+                     <div class="row">
                       
                       <%=gravatar_for(recipient) %>
 
 
                       <div class="col-md-6">
                     
-                      <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-money" aria-hidden="true"></i></span>
+                          <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-money" aria-hidden="true"> Full Name</i></span>
 
-                        <%= recipient.fullname %>
-                  
-                    </div>
+                                <%= recipient.fullname %>
+                          
+                          </div>
 
-                    <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-shield" aria-hidden="true"></i></span>
-                            <%= recipient.accounts.first.phone %>
-                    </div>
+                      
+                           <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-truck" aria-hidden="true"> Amount</i></span>
+                                    <%= donation.amount %>
+                            </div>
 
-                       <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-bank" aria-hidden="true"></i></span>
-                            <%= donation.amount %>
-                    </div>
+                             <div class="input-group">
+                                  <span class="input-group-addon" id="basic-addon1">
+                                    <i class="fa fa-bank" aria-hidden="true"> Bank Name</i></span>
+                                        <%= recipient.accounts.first.bank_name %>
+                            </div>
+                             
+
+                           <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-user" aria-hidden="true"> Account Name</i></span>
+                                    <%= recipient.accounts.first.acc_name %>
+                          </div>
+                 
+
+                           <div class="input-group">
+                              <span class="input-group-addon" id="basic-addon1">
+                                <i class="fa fa-shield" aria-hidden="true"> Account Number</i></span>
+                                    <%= recipient.accounts.first.acc_no %>
+                          </div>
 
 
+                </div>
 
-                   
-                  </div>
                  <div class="col-md-6">
                     <!--  <select class="select2 form-control">
                       <option value="NA">Select Country</option>
@@ -173,31 +190,13 @@
                     </select>
                      -->
 
-                Email: <span style="color:brown"> <%= recipient.email %> </span>
+                         Email: <span style="color:brown"> <%= recipient.email %> </span> <br/>
+                         Phone: <%= recipient.accounts.first.phone %>
 
-                 <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-bank" aria-hidden="true"></i></span>
-                            <%= recipient.accounts.first.bank_name %>
+
+        
                     </div>
-                 </div>
-
-                   <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-user" aria-hidden="true"></i></span>
-                            <%= recipient.accounts.first.acc_name %>
                     </div>
-                 </div>
-
-                   <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-kite" aria-hidden="true"></i></span>
-                            <%= recipient.accounts.first.acc_no %>
-                    </div>
-                 </div>
-
-
-                </div>
 
 
 
@@ -212,16 +211,27 @@
 
 
           </div>
+         </div> 
+         </div>
          </div>
 
-                    <div class="col-sm-6 col-xs-6">
+
+
+
+
+
+                    <div class="col-sm-3 col-xs-6">
                         <div class="user-info">
 
-                            <h5><span class="badge badge-<%=get_badge_status(donation.pay_status)%>"> <%= donation.pay_status %> </span> </h5>  <br/>
-                            
+                        <% if donation.pay_status == "paid" %>
+                            <h5>Payment Status: <span class="badge badge-success"> <%= donation.pay_status %> </span> </h5>  <br/>
+
+                        <% else %>
+                             <h5>Payment Status: <span class="badge badge-danger"> <%= donation.pay_status %> </span> </h5>  <br/>
+
                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myPaymentModal">I Have Made Payment</button>
                    
-
+                        <% end %>
 
 
 
@@ -238,28 +248,25 @@
                       </div>
 
 
-                      
+                      <%= form_for :donation, :url => payment_confirmation_path(donation_id: donation.id, pay_status: "paid") do |f| %>
+
                           <div class="modal-body">
-                        <p class="small"> Find below the donor details. view <a href="#" target="_blank"> terms & conditions</a></p>
+                       
                              <div class="row">
                       
-                            <%=gravatar_for(recipient) %>
-
-
+                         
                       <div class="col-md-6">
-                    
-                      <div class="input-group">
-                      <span class="input-group-addon" id="basic-addon1">
-                        <i class="fa fa-money" aria-hidden="true"></i></span>
+                         <%=gravatar_for(recipient) %>
 
-                        <%= recipient.fullname %>
-                  
-                    </div>
+
+                    
+                    <h3><%= recipient.fullname %></h3>
 
 
                    
                   </div>
                  <div class="col-md-6">
+                  <p class="small"> Add Payment Details Below (optional). view <a href="#" target="_blank"> terms & conditions</a></p> <hr/>
                     
                     <!--  <select class="select2 form-control">
                       <option value="NA">Select Country</option>
@@ -268,8 +275,14 @@
                       <option value="GH">Ghana</option>
                     </select>
                      -->
+                     <div class="form-group">
+                        <%= f.file_field :pop, placeholder: "Upload Proof (Optional)", class: "form-control" %>
+                     </div>
+                     <div class="form-group">
+                     <%= f.text_area :payment_text, placeholder: "Add comment", class: 'form-control' %>
 
-
+                     <%= f.hidden_field :pay_status, value: "paid" %>
+                     </div>
 
                  </div>
 
@@ -282,10 +295,13 @@
 
                           </div>
                           <div class="modal-footer">
-                
+                                <%= f.submit "Submit", class: "btn btn-info" %>
+
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         
                           </div>
+
+                          <% end %>
                      </div>
                   </div>
                 </div>
