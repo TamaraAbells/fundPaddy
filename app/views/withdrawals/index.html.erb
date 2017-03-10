@@ -83,8 +83,14 @@
                     <div class="col-sm-6 col-xs-6">
                         <div class="user-info">
                                 <%= gravatar_for(donor1)%>
-                            <h5><%= donor1.fullname %> <span class="badge badge-<%=get_badge_status(donations.first.status)%>"> <%= donations.first.status %> </span></h5>  <br/>
-                             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myDetailsModal">View Details</button>
+                            <h5><%= donor1.fullname %> <span class="badge badge-<%=get_badge_status(donations.first.status)%>"> <%= donations.first.status %> </span></h5>  <br/> 
+                             
+                               <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myDetailsModal">View Details</button>
+                                <% if donations.first.pay_status == "paid" %> <br/>
+                              <span class="badge badge-warning "> Donor made payment </span> <br/>
+                              <% end %>
+
+                            
 
 
                             <!-- view details modal -->
@@ -127,6 +133,18 @@
                             <%= withdrawal.amount %>
                     </div>
 
+                       <% if donations.first.pay_status == "paid" %> <br/>
+                                 <div class="input-group">
+                                      <span class="input-group-addon" id="basic-addon1">
+                                        <i class="fa fa-comment" aria-hidden="true"></i></span>
+                                            <%= donations.first.payment_text %>
+                                    </div>
+
+
+                  
+                   <% end %>
+
+
 
 
                    
@@ -142,6 +160,8 @@
 
                 Email: <span style="color:brown"> <%= donor1.email %> </span>
 
+               
+             
 
                  </div>
 
@@ -154,7 +174,7 @@
 
                           </div>
                           <div class="modal-footer">
-                          <% if donations.first.status == "confirmed" || "completed" %>
+                          <% if donations.first.status == "confirmed" %>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
                             <% else %>
 
@@ -189,8 +209,14 @@
                         <div class="user-info">
                                 <%= gravatar_for(donor2)%>
                             <h5><%= donor2.fullname %> <span class="badge badge-<%=get_badge_status(donations.second.status)%>"> <%= donations.second.status %> </span></h5>  <br/>
+                            
                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myDetails2Modal">View Details</button>
-                   
+
+                             <% if donations.second.pay_status == "paid" %> <br/>
+                              <span class="badge badge-warning "> Donor made payment </span> <br/>
+                              <% end %>
+
+                           
 
 
 
@@ -237,6 +263,15 @@
                             <%= withdrawal.amount %>
                     </div>
 
+                        <% if donations.second.pay_status == "paid" %> <br/>
+                                   <div class="input-group">
+                                      <span class="input-group-addon" id="basic-addon1">
+                                        <i class="fa fa-comment" aria-hidden="true"></i></span>
+                                            <%= donations.second.payment_text %>
+                                    </div>
+
+                     <% end %>
+
 
 
                    
@@ -252,7 +287,7 @@
 
                 Email: <span style="color:brown"> <%= donor2.email %> </span>
 
-
+                
                  </div>
 
 

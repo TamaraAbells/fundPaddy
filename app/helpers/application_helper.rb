@@ -20,6 +20,19 @@ module ApplicationHelper
 
 	end
 
+	def total_earnings(member)
+		withdrawals = member.withdrawals.where(status: "completed")
+		sum = 0
+
+		withdrawals.each do |withdrawal|
+			w = 2 * withdrawal.amount
+			sum += w 
+		end 
+
+		return sum
+
+	end
+
 
 	def withdrawal_dispatcher(unmatched_withdrawals, available_donations)
 		results = []

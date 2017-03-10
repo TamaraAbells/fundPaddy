@@ -1,6 +1,55 @@
 
 <% provide(:page_title, "Select Plan") %>
 
+
+<% if current_member.accounts.empty? %>
+<script type="text/javascript">
+  $('#myModalAlert').modal('show');
+</script>
+  <!-- Modal -->
+<div class="modal" id="myModalAlert" tabindex="-1" role="dialog" aria-labelledby="myModalAlertLabel" aria-hidden="true">
+  <div class="modal-dialog ezCustTrans">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalAlertLabel" style="color: #18aa4a;">Lets Get You Started With your Donation <i class="fa fa-smile-o"></i> </h4> 
+      </div>
+
+
+        <div class="modal-body">
+     
+           <div class="row">
+
+            <p class="small"> <i class="fa fa-check-square-o"></i> Start by Adding your account Details in the Accounts Page or <a href="<%=office_settings_path%>" target="_blank"> Click Here</a> to do so. <i>(very important)</i></p>
+
+             <p class="small"> <i class="fa fa-check-square-o"></i> Read the warnings and <a href="#" target="_blank">terms of participation</a><i>(important)</i></p>
+
+              <p class="small"> <i class="fa fa-check-square-o"></i> Click on the Plus (+) Create Donation Button on the top menu to create a new Donation. </p>
+      
+
+            </div>
+
+
+
+
+
+        </div>
+        <div class="modal-footer">
+        
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!--          <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+<% end %>
+
+
   <div class="row">
     <div class="col-xs-12">
       <div class="card">

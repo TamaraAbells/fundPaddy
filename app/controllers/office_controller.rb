@@ -9,6 +9,13 @@ class OfficeController < ApplicationController
   	@member = current_member
   end
 
+
+  def profile
+    @member = current_member
+
+  end
+
+
   def settings
 
   	@member = current_member

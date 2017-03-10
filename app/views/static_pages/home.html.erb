@@ -23,13 +23,13 @@
                                 </div>
 
                                 <!-- Collect the nav links, forms, and other content for toggling -->
-                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <div class="collapse navbar-collapse no-box" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav">
                                         <li><a href="#banner">Home</a></li>
-                                        <li><a href="#service">Service</a></li>
-                                        <li><a href="#feature">Feature</a></li>
-                                        <li><a href="#utility">Utility</a></li>
-                                        <li><a href="#subscribe">Join</a></li>
+                                        <li><a href="#service">Act</a></li>
+                                        <li><a href="#feature">HowItWorks</a></li>
+                                     
+                                        <li><a href="#subscribe">Feedback</a></li>
                                     </ul>
                                   
                                 </div><!-- /.navbar-collapse -->
@@ -39,10 +39,10 @@
                 </div>
                 <div class="col-md-3 col-xs-12 col-sm-3">
                     <ul class="social-info">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="http://web.facebook.com/fundpaddy"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="http://twitter.com/fundpaddy"><i class="fa fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="plus.google.com/fundpaddy"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -66,19 +66,19 @@
                 <div class="col-md-6 col-md-offset-1 col-sm-6">
                     <div class="block">
                         <h1 class="styled" style="color:#f48e5c;">
-                           FundPaddy, the home of peer to peer donations.
+                           FundPaddy
                         </h1> <hr/>
                         <p class="roboto">
-                           FundPaddy is a peer-to-peer (member to member) donation platform. You Get twice(2x) your initial donation amount in less than 7 days. yes! "in less than 7 days". and we mean it.<br/><Br/>
-                                                      Our platform supports five (5) different currencies accross the world including bitcoin(=B=).
+                           FundPaddy is a peer-to-peer (member to member) donation platform. You Get twice(2x) your initial donation amount within 72 hours i.e. (1-3 days)after a completed donation. yes! "within 72 hours", and we mean it.<br/><Br/>
+                                                      Our platform supports five (5) different currencies accross the world, and we are always expanding our reach.
                         </p>
 
                         <ul class="download-btn">
                             <li>
-                                <a href="#" class="btn btn-default btn-apple"> <i class="fa fa-plus-circle"></i>Register</a>
+                                <a href="<%=new_member_registration_path%>" class="btn btn-default btn-apple"> <i class="fa fa-plus-circle"></i>Register</a>
                             </li>
                             <li>
-                                <a href="#" class="btn btn-default btn-andriod"><i class="fa fa-sign-in"></i>Log in</a>
+                                <a href="<%=new_member_session_path%>" class="btn btn-default btn-andriod"><i class="fa fa-sign-in"></i>Log in</a>
                             </li>
                             <li>
                                 <a href="#" class="btn btn-default btn-windows"><i class="fa fa-send"></i>Invite</a>
@@ -104,7 +104,7 @@
                             </div>
                             
                             <h3>Sign Up</h3>
-                            <p>the first step to take is to Register. Create an account, add your details and mobile contact :).</p>
+                            <p>the first step to take is to Register. Create an account, add your details and mobile contact.</p>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -121,8 +121,8 @@
                             <div class="icon">
                                 <i class="fa  fa-handshake-o"></i>
                             </div>
-                            <h3>Receive Donation</h3>
-                            <p>You will be paired with two (2) other members to pay you 100% interest on the amount you donated.</p>
+                            <h3>Receive Earnings</h3>
+                            <p>You will be paired with two (2) other members to pay you 100% interest on the amount you donated making(200%)</p>
                         </div>
                     </div>
                      <div class="col-md-3 col-sm-6">
@@ -181,7 +181,7 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">Donate</h4>
-                                <p>After selecting a donation plan, you will be matched to make payment of your selected donation amount. which must be completed within 24 hours.</p>
+                                <p>After selecting a donation plan, you will be matched to make payment of your selected donation amount within (1-72 hours). which must be completed within 24 hours.</p>
                             </div>
                         </div>
                     </div>
@@ -194,7 +194,7 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">Earn</h4>
-                                <p>Within (1-7) days after making payment, you will be paired with two other fundPaddies who will make payment of your specified donation amount to you. making up 100% reward on your initial donation. i.e. Donate $20, get $40.</p>
+                                <p>Within (1-72) hours after making payment, you will be paired with two other fundPaddies who will make payment of your specified donation amount to you. making up 100% reward on your initial donation. i.e. Donate $20, get $40, etc.</p>
                             </div>
                         </div>
                     </div>
@@ -207,7 +207,7 @@
                             </div>
                             <div class="media-body">
                                 <h4 class="media-heading">Referral Earnings </h4>
-                                <p>fundPaddy will reward you with 20% of the first deposit of all your referrals. So want to earn more? promote your referrals links more :)</p>
+                                <p>fundPaddy will reward you with various earning plans according to your referral activity. Invite 10 new members and get rewarded with a free Silver plan. Invite 20 new members and get a free Gold earning plan, etc. :)</p>
                             </div>
                         </div>
                     </div>
@@ -236,7 +236,7 @@
                     <div class="block">
                         <h2>fundPaddy is flexible</h2>
                         <p>
-                            Manage your donations independently and create as much as 3 multiple donations in your selected plan at each point in time. You can switch from one plan to another with ease :).
+                            Manage your donations independently and create as much donations as you wish in your selected plan at each point in time. You can switch from one plan to another with ease :).
                         </p>
                     </div>
                 </div>

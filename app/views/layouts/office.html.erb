@@ -102,22 +102,44 @@
   </div>
   <div class="sidebar-menu">
     <ul class="sidebar-nav">
-      <li class="<%= 'active' if current_page?(office_settings_path) %>">
-        <a href="<%=office_settings_path%>">
+
+       <li class="<%= 'active' if current_page?(office_path) %>">
+        <a href="<%=office_path%>">
           <div class="icon">
             <i class="fa fa-tasks" aria-hidden="true"></i>
           </div>
-          <div class="title">Settings</div>
+          <div class="title">Dashboard</div>
         </a>
       </li>
-      <li class="<%= 'active' if current_page?(member_donations_path(current_member)) %>">
-        <a href="<%=member_donations_path(current_member)%>">
+
+      <li class="<%= 'active' if current_page?(office_settings_path) %>">
+        <a href="<%=office_settings_path%>">
+          <div class="icon">
+            <i class="fa fa-gears" aria-hidden="true"></i>
+          </div>
+          <div class="title">Accounts</div>
+        </a>
+      </li>
+
+
+
+
+        <li class="dropdown <%= 'active' if current_page?(member_withdrawals_path(current_member)) %>">
+        <a href="<%=member_donations_path(current_member)%>" class="dropdown-toggle" data-toggle="dropdown">
           <div class="icon">
             <i class="fa fa-cubes" aria-hidden="true"></i>
           </div>
           <div class="title">Donations</div>
         </a>
+        <div class="dropdown-menu">
+          <ul>
+            <li><a href="<%=new_member_donation_path(current_member)%>" style="color: green; ">New Donation</a></li>
+            <li><a href="<%=member_donations_path(current_member)%>" style="color: green;">All Donations</a></li>
+          </ul>
+        </div>
       </li>
+
+
        <li class="<%= 'active' if current_page?(member_withdrawals_path(current_member)) %>">
         <a href="<%=member_withdrawals_path(current_member)%>">
           <div class="icon">
@@ -152,28 +174,7 @@
         </div>
       </li>
        -->
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <div class="icon">
-            <i class="fa fa-file-o" aria-hidden="true"></i>
-          </div>
-          <div class="title">Pages</div>
-        </a>
-        <div class="dropdown-menu">
-          <ul>
-            <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> Admin</li>
-            <li><a href="./pages/form.html">Form</a></li>
-            <li><a href="./pages/profile.html">Profile</a></li>
-            <li><a href="./pages/search.html">Search</a></li>
-            <li class="line"></li>
-            <li class="section"><i class="fa fa-file-o" aria-hidden="true"></i> Landing</li>
-            <!-- <li><a href="./pages/landing.html">Landing</a></li> -->
-            <li><a href="./pages/login.html">Login</a></li>
-            <li><a href="./pages/register.html">Register</a></li>
-            <!-- <li><a href="./pages/404.html">404</a></li> -->
-          </ul>
-        </div>
-      </li>
+    
     </ul>
   </div>
   <div class="sidebar-footer">
@@ -239,87 +240,38 @@
             </ul>
           </div>
         </li>
-        <li class="dropdown notification info">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <div class="icon"><i class="fa fa-comments" aria-hidden="true"></i></div>
-            <div class="title">Unread Messages</div>
-            <div class="count">99</div>
-          </a>
-          <div class="dropdown-menu">
-            <ul>
-              <li class="dropdown-header">Message</li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-warning pull-right">10</span>
-                  <div class="message">
-                    <img class="profile" src="https://placehold.it/100x100">
-                    <div class="content">
-                      <div class="title">"Payment Confirmation.."</div>
-                      <div class="description">Alan Anderson</div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-warning pull-right">5</span>
-                  <div class="message">
-                    <img class="profile" src="https://placehold.it/100x100">
-                    <div class="content">
-                      <div class="title">"Hello World"</div>
-                      <div class="description">Marco  Harmon</div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-warning pull-right">2</span>
-                  <div class="message">
-                    <img class="profile" src="https://placehold.it/100x100">
-                    <div class="content">
-                      <div class="title">"Order Confirmation.."</div>
-                      <div class="description">Brenda Lawson</div>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li class="dropdown-footer">
-                <a href="#">View All <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="dropdown notification danger">
+     <li class="dropdown notification danger">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <div class="icon"><i class="fa fa-bell" aria-hidden="true"></i></div>
-            <div class="title">System Notifications</div>
-            <div class="count">10</div>
+            <div class="title">Notifications</div>
+            <div class="count">1</div>
           </a>
           <div class="dropdown-menu">
             <ul>
-              <li class="dropdown-header">Notification</li>
+              <li class="dropdown-header">Messages</li>
               <li>
                 <a href="#">
-                  <span class="badge badge-danger pull-right">8</span>
+                  <span class="badge badge-warning pull-right">1</span>
                   <div class="message">
+                    <img class="profile" src="https://placehold.it/100x100">
                     <div class="content">
-                      <div class="title">New Order</div>
-                      <div class="description">$400 total</div>
+                      <div class="title">"Welcome to fundPaddy..."</div>
+                      <div class="description">the FundTeam</div>
                     </div>
                   </div>
                 </a>
               </li>
+             
               <li>
                 <a href="#">
-                  <span class="badge badge-danger pull-right">14</span>
-                  Inbox
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-danger pull-right">5</span>
-                  Issues Report
+                  <span class="badge badge-warning pull-right">new</span>
+                  <div class="message">
+                    <img class="profile" src="https://placehold.it/100x100">
+                    <div class="content">
+                      <div class="title">"You can now get 200%.."</div>
+                      <div class="description">the FundTeam</div>
+                    </div>
+                  </div>
                 </a>
               </li>
               <li class="dropdown-footer">
@@ -328,6 +280,7 @@
             </ul>
           </div>
         </li>
+      
         <li class="dropdown profile">
           <a href="/html/pages/profile.html" class="dropdown-toggle"  data-toggle="dropdown">
 
@@ -341,16 +294,11 @@
             </div>
             <ul class="action">
               <li>
-                <a href="#">
+                <a href="<%=profile_path%>">
                   Profile
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  <span class="badge badge-danger pull-right">5</span>
-                  My Inbox
-                </a>
-              </li>
+         
               <li>
                 <%= link_to "Settings", office_settings_path %>
               </li>

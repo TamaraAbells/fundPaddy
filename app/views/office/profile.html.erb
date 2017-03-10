@@ -1,0 +1,87 @@
+
+ <% provide(:page_title, "Profile") %>
+ 
+ 
+
+ <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div class="card-body app-heading">
+          <%= gravatar_for(current_member) %>
+          <div class="app-title">
+            <div class="title"><span class="highlight"><%=current_member.fullname%></span></div>
+            <div class="description">status: <span class="badge badge-info">active</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+        <div class="col-xs-6">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-plus-square fa-2x"></i> - Recent Donations
+        </div>
+        <div class="card-body no-padding">
+          <table class="datatable table table-striped primary" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Plan</th>
+            <th>Amount</th>
+            <th>Created</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% current_member.donations.each do |donation| %>
+        <tr>
+            <td><%=donation.plan%></td>
+            <td><%=donation.amount%></td>
+            <td><%=time_ago_in_words(donation.created_at)%></td>
+            <td><%=donation.status%></td>
+            <td><a href="<%=member_donations_path(current_member)%>" class="btn btn-sm btn-info">view</a></td>
+        </tr>
+       <% end %>
+    </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+
+
+
+        <div class="col-xs-6">
+      <div class="card">
+        <div class="card-header">
+           <i class="fa fa-heart fa-2x"></i> - Recent Withdrawals
+        </div>
+        <div class="card-body no-padding">
+          <table class="datatable table table-striped primary" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Plan</th>
+            <th>Received</th>
+            <th>Created</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% current_member.withdrawals.each do |withdrawal| %>
+        <tr>
+            <td><%=withdrawal.plan%></td>
+            <td><%= 2*withdrawal.amount%></td>
+            <td><%=time_ago_in_words(withdrawal.created_at)%></td>
+            <td><%=withdrawal.status%></td>
+            <td><a href="<%=member_withdrawals_path(current_member)%>" class="btn btn-sm btn-info">view</a></td>
+        </tr>
+       <% end %>
+    </tbody>
+</table>
+        </div>
+      </div>
+    </div>
+
+
+  </div>

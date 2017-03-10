@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   get 'office/settings'
+
+  get 'office/profile', to: 'office#profile', as: 'profile'
+  
   post 'donation/payment_conf', to: 'donations#payment_conf', as: 'payment_confirmation'
   get 'donation/confirm', to: 'donations#donation_confirm', as: 'donation_confirmation'
 
