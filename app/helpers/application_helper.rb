@@ -20,6 +20,12 @@ module ApplicationHelper
 
 	end
 
+	def count_referrals(member)
+		referrals = Member.where(referrer: member.email)
+
+		referrals.count
+	end
+
 	def total_earnings(member)
 		withdrawals = member.withdrawals.where(status: "completed")
 		sum = 0

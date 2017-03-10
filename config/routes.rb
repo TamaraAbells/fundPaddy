@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'office/settings'
 
+  post 'static_pages/send_message', to: 'static_pages#send_message', as: 'send_message'
+
   get 'office/profile', to: 'office#profile', as: 'profile'
   
   post 'donation/payment_conf', to: 'donations#payment_conf', as: 'payment_confirmation'

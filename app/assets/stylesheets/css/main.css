@@ -350,7 +350,7 @@ header .social-info li a:hover {
   width: 340px;
   padding: 20px 0px 20px 15px;
   border-radius: 0;
-  background: white;
+  background: rgba(255, 255, 255, .15);
   border: 1px solid #d4d4d4;
   border: 1px solid #d1d1d1;
   box-shadow: none;
@@ -379,6 +379,7 @@ header .social-info li a:hover {
 }
 #subscribe .btn-signup:hover {
   background: #fff;
+   color:#77c344;
   border: 1px solid #77c344;
 }
 #subscribe .btn-signup:hover i {

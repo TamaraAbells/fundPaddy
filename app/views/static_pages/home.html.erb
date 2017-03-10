@@ -276,29 +276,39 @@
                         </div>
                         
                         
+<!-- 
+                        <form class="form-inline text-center col-sm-12 col-xs-12" role="form"> -->
+                        <%= form_for @message, :url=> {controller: :static_pages, action: :send_message}, :html=> {class: "form-inline text-center col-sm-12 col-xs-12"}  do |f| %>
 
-                        <form class="form-inline text-center col-sm-12 col-xs-12" role="form">
-                            
                             <div class="row">
                             <div class="col-sm-4 col-lg-4">
                             </div>
                             <div class="col-sm-4 col-lg-4">
                             <div class="form-group">
-                                <input type="text" placeholder="your email" class="form-control" id="signup-form" >
-                                
+
+                                <%= f.text_field :email, placeholder: 'Your email',  id: 'signup-form', required: true %>
+                               <!--  <input type="text" placeholder="your email" class="form-control" id="signup-form" >
+                                 -->
                                 
                             </div> <hr/>
                              <div class="form-group">
-                                <textarea type="text" name="thoughts" placeholder="Enter your thougts here :)" class="form-control" id="thoughts"> </textarea>
-                                
+
+                                <%= f.text_area :content, placeholder: "Enter your thoughts here", class: 'form-control', id: 'thoughts', required: true %>
+                          <!--       <textarea type="text" name="thoughts" placeholder="Enter your thougts here :)" class="form-control" id="thoughts"> </textarea>
+                                 -->
                                 
                             </div> <hr/>
-                            <a href="" type="submit" class="btn btn-default btn-block btn-signup">
+
+                           
+                            <%= f.submit "Send", class: 'btn btn-default btn-block btn-signup' %>
+                       <!--      <a href="" type="submit" class="btn btn-default btn-block btn-signup">
                                  <i class="fa fa-paper-plane"></i>
-                            </a>
+                            
+                            </a> -->
+                          
                             </div>
-                            </div>
-                        </form>
+                        <% end %>
+                    <!--     </form> -->
                     </div>
                     
 

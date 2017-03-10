@@ -90,6 +90,16 @@
                    <!-- 
                 <input type="text" class="form-control" placeholder="Confirm Password" aria-describedby="basic-addon4"> -->
               </div>
+
+
+                <div class="input-group">
+                <span class="input-group-addon" id="basic-addon2">
+                  <i class="fa fa-user-plus" aria-hidden="true"></i></span>
+
+               <%= f.email_field :referrer, placeholder: "referrer email(optional)", class: 'form-control', 'aria-describedby': 'basic-addon2' %>
+<!-- 
+                <input type="text" class="form-control" placeholder="email" aria-describedby="basic-addon2" name="email"> -->
+              </div>
               <div class="text-center">
 
                   <div class="actions">

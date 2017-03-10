@@ -10,4 +10,6 @@ class Member < ApplicationRecord
    has_many :accounts, dependent: :destroy
    has_many :donations, dependent: :destroy
    has_many :withdrawals, dependent: :destroy
+
+   has_many :notifications, dependent: :destroy
 end
