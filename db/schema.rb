@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310190710) do
+ActiveRecord::Schema.define(version: 20170310211334) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "member_id"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20170310190710) do
     t.string   "pay_status"
     t.string   "payment_text"
     t.string   "pop"
+    t.datetime "matchtime"
+    t.datetime "blocktime"
     t.index ["member_id", "plan"], name: "index_donations_on_member_id_and_plan"
     t.index ["member_id"], name: "index_donations_on_member_id"
   end
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170310190710) do
     t.string   "lastname"
     t.string   "fullname"
     t.string   "referrer"
+    t.integer  "status",                 default: 0
     t.index ["email"], name: "index_members_on_email", unique: true
     t.index ["reset_password_token"], name: "index_members_on_reset_password_token", unique: true
   end

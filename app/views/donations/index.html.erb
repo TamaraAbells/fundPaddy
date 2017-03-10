@@ -191,7 +191,11 @@
                      -->
 
                          Email: <span style="color:brown"> <%= recipient.email %> </span> <br/>
-                         Phone: <%= recipient.accounts.first.phone %>
+                         Phone: <%= recipient.accounts.first.phone %> <br/><hr/>
+                         <span style="color:red;">You must make payment before: <b><%=donation.blocktime%> </b>to avoid the fundTeam's wrath. </span>
+
+
+
 
 
         

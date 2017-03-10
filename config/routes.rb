@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
   get 'office/dispatcher', to: 'office#dispatcher', as: 'dispatcher'
 
+  get 'office/rematcher', to: 'office#rematcher', as: 'rematcher'
+
   resources :accounts
   
 

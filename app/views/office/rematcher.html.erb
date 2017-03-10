@@ -1,4 +1,4 @@
- <% provide(:page_title, "Restricted View") %>
+ <% provide(:page_title, "Rematcher Logs") %>
  
   <div class="row">
     <div class="col-md-12">
@@ -11,12 +11,14 @@
                 <div class="row">
                   
                   <div class="col-md-6">
+                
                    <a href="<%=dispatcher_path%>" class="btn btn-block btn-success"> Match Unmatched Withdrawals </a>
                    </div>
                 
                   <div class="col-md-6">
-                    <a href="<%=rematcher_path%>" class="btn btn-block btn-info"> Block TimedOut Donations(Rematch) </a>
-               
+                    <% results = donation_rematcher(@matched_donations, @available_donations) %>
+                  <%= results %>
+                   
 
                   </div>
             

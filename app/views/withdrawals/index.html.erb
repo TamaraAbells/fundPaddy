@@ -159,7 +159,16 @@
                      -->
 
                 Email: <span style="color:brown"> <%= donor1.email %> </span>
+                  
 
+                     <% if donations.first.status == "confirmed" %>
+                   <span style="color:blue;"> <br/><hr/>
+                    <span class="badge badge-success">You confirmed this payment </span></span>
+                <% else %>
+                 <span style="color:red;"> <br/><hr/>
+                  Donor must make payment before: <b><%=donations.first.blocktime%> </b> </span>
+
+                  <% end %>
                
              
 
@@ -213,7 +222,7 @@
                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myDetails2Modal">View Details</button>
 
                              <% if donations.second.pay_status == "paid" %> <br/>
-                              <span class="badge badge-warning "> Donor made payment </span> <br/>
+                              <span class="badge badge-warning ">Donor made payment </span> <br/>
                               <% end %>
 
                            
@@ -286,7 +295,16 @@
                      -->
 
                 Email: <span style="color:brown"> <%= donor2.email %> </span>
+             
 
+                <% if donations.second.status == "confirmed" %>
+                   <span style="color:blue;"> <br/><hr/>
+                    <span class="badge badge-success">You confirmed this payment </span></span>
+                <% else %>
+                 <span style="color:red;"> <br/><hr/>
+                  Donor must make payment before: <b><%=donations.second.blocktime%> </b> </span>
+
+                  <% end %>
                 
                  </div>
 

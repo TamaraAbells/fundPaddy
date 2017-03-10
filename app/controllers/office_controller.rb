@@ -49,10 +49,14 @@ class OfficeController < ApplicationController
      @unmatched_withdrawals = Withdrawal.unmatched
     @available_donations = Donation.unmatched
     @member = current_member
-    @member = current_member
 
   end
 
+  def rematcher
+    @matched_donations = Donation.matched
+    @available_donations = Donation.unmatched
+    @member = current_member
+  end
 
 
 

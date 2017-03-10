@@ -57,7 +57,10 @@ module ApplicationHelper
 
 				filtered_donations.each do |d|
 
-					d.update(status: 'matched', recipient_id: withdrawer_id)
+					matchtime = Time.now
+					blocktime = matchtime + 86400
+
+					d.update(status: 'matched', recipient_id: withdrawer_id, matchtime: matchtime, blocktime: blocktime)
 					results << "1 Donation matched"
 				end
 
@@ -71,6 +74,68 @@ module ApplicationHelper
 		end
 
 		return results
+	end
+
+
+	def donation_rematcher(matched_donations, available_donations)
+
+		matched_donations = matched_donations
+		available_donations = available_donations
+		results = []
+
+		matched_donations.each do |donation|
+			if donation.pay_status.nil?
+				
+				if donation.blocktime.to_date_time.sec < Time.now.sec
+					#block donation and user
+
+					results << "Donation Timed out"
+
+					if available_donations.count >= 1
+
+						donation_to_match = available_donations.where(amount: donation.amount).first
+
+						results << "Found 1 new donation  waiting.."
+
+						#recipient of donation
+						withdrawer_id = donation.recipient_id
+
+
+						#delete donation temporarily
+						donation.update(status: "deleted", recipient_id: nil)
+						owner = donation.member
+
+
+						#block owner
+						owner.update(status: 1)
+
+			
+						matchtime = Time.now
+						blocktime = matchtime * 86400
+
+						if donation_to_match.update(status: 'matched', recipient_id: withdrawer_id, matchtime: matchtime, blocktime: blocktime)
+							results << "Donation  -deleted and member rematched"
+						else
+							results << "There was an error selecting a new donation for the member"
+						end
+
+
+					end
+
+				end
+
+
+
+
+			else
+				results << "Note: this donation has pay_status set ..skipping"
+			end
+
+
+		end
+
+		return results
+
 	end
 
 
