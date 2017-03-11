@@ -98,7 +98,7 @@ ul li {
   padding: 5px 15px;
 }
 .menu .navbar-default .navbar-nav > li > a:hover {
-  color: #f48e5c;
+  color: #29c75f;
 }
 .menu .navbar-nav {
   float: none;
@@ -140,7 +140,7 @@ header .social-info li a {
   border-right: 1px solid #dedede;
 }
 header .social-info li a:hover {
-  color: #f48e5c;
+  color: #29c75f;
 }
 #banner {
   background-size: cover;
@@ -233,15 +233,15 @@ header .social-info li a:hover {
   color: #fff;
 }
 #service .block:hover h3 {
-  color: #f48e5c;
+  color: #29c75f;
 }
 #service .block:hover .icon {
   border: 1px solid #FFFFFF;
-  background: #f48e5c;
+  background: #29c75f;
   color: #fff;
-  -webkit-box-shadow: 0 0 0px 2px #f48e5c;
-  -moz-box-shadow: 0 0 0px 2px #f48e5c;
-  box-shadow: 0 0 0px 2px #f48e5c;
+  -webkit-box-shadow: 0 0 0px 2px #29c75f;
+  -moz-box-shadow: 0 0 0px 2px #29c75f;
+  box-shadow: 0 0 0px 2px #29c75f;
 }
 #service .block .icon {
   width: 90px;
@@ -285,11 +285,11 @@ header .social-info li a:hover {
   padding-right: 22px;
 }
 #feature .feature-item .icon i {
-  color: #f48e5c;
+  color: #29c75f;
   font-size: 30px;
 }
 #feature .feature-item h4 {
-  color: #f48e5c;
+  color: #29c75f;
   margin-bottom: 0;
   font-weight: 300;
   margin-bottom: 8px;
