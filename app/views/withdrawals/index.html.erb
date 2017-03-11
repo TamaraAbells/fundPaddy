@@ -68,7 +68,7 @@
             <b>Step2</b> : <i>Your withdrawal request has been  matched. Expect payment from members below: Calling or texting appropriate donor can be helpful.  <b>Note: </b>"Be polite".</i>
             
             <% if withdrawal.status == 'matched' %>
-                <% donations = get_matched_donations(withdrawal.member_id) %>
+                <% donations = get_matched_donations(withdrawal.member_id, withdrawal.id) %>
                 <% donor1 = donations.first.member %>
                 <% donor2 = donations.second.member %>
 

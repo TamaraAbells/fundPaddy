@@ -6,6 +6,11 @@ class OfficeController < ApplicationController
 
   def index
   	@member = current_member
+
+    if current_member.status == 1
+        flash[:error] = "YOU BROKE THE RULES!!!"
+        redirect_to blocked_members_path
+      end
   end
 
 

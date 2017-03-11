@@ -5,6 +5,12 @@ class WithdrawalsController < ApplicationController
 
   def index
     @withdrawals = current_member.withdrawals.order(created_at: :desc)
+
+     if current_member.status == 1
+        flash[:error] = "YOU BROKE THE RULES!!!"
+        redirect_to blocked_members_path
+      end
+      
   end
 
   def new

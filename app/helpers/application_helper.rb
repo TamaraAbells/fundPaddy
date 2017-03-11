@@ -60,7 +60,7 @@ module ApplicationHelper
 					matchtime = Time.now
 					blocktime = matchtime + 86400
 
-					d.update(status: 'matched', recipient_id: withdrawer_id, matchtime: matchtime, blocktime: blocktime)
+					d.update(status: 'matched', recipient_id: withdrawer_id, withdrawal_id: w.id, matchtime: matchtime, blocktime: blocktime)
 					results << "1 Donation matched"
 				end
 
@@ -86,7 +86,7 @@ module ApplicationHelper
 		matched_donations.each do |donation|
 			if donation.pay_status.nil?
 				
-				if donation.blocktime.to_date_time.sec < Time.now.sec
+				if donation.blocktime < Time.now
 					#block donation and user
 
 					results << "Donation Timed out"
@@ -106,14 +106,16 @@ module ApplicationHelper
 						owner = donation.member
 
 
+						withdrawal_id = donation.withdrawal_id
+
 						#block owner
 						owner.update(status: 1)
 
 			
 						matchtime = Time.now
-						blocktime = matchtime * 86400
+						blocktime = matchtime + 86400
 
-						if donation_to_match.update(status: 'matched', recipient_id: withdrawer_id, matchtime: matchtime, blocktime: blocktime)
+						if donation_to_match.update(status: 'matched', recipient_id: withdrawer_id,  withdrawal_id: withdrawal_id, matchtime: matchtime, blocktime: blocktime)
 							results << "Donation  -deleted and member rematched"
 						else
 							results << "There was an error selecting a new donation for the member"
@@ -139,8 +141,8 @@ module ApplicationHelper
 	end
 
 
-	def get_matched_donations(withdrawer_id)
-		get_donations = Donation.where(recipient_id: withdrawer_id)
+	def get_matched_donations(withdrawer_id, withdrawal_id)
+		get_donations = Donation.where(recipient_id: withdrawer_id, withdrawal_id: withdrawal_id)
 
 		get_donations
 

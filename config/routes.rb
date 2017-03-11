@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'office/settings'
 
+  get 'office/blocked', to: 'static_pages#blocked', as: 'blocked_members'
+
   post 'static_pages/send_message', to: 'static_pages#send_message', as: 'send_message'
 
   get 'office/profile', to: 'office#profile', as: 'profile'

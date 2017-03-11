@@ -26,6 +26,11 @@ layout "static_pages"
   def about
   end
 
+  def blocked
+    @message = Message.new
+
+  end
+
   def howitworks
   end
 

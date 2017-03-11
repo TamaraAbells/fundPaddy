@@ -8,7 +8,7 @@ class AccountsController < ApplicationController
     @account = current_member.accounts.build(account_params)
 
     if @account.save
-      flash.now[:notice] = "Account Details Successfully Updated"
+      flash[:notice] = "Account Details Successfully Updated"
       redirect_to office_settings_path
     else
       flash[:error] = "An error occured. Check your details and try again."
