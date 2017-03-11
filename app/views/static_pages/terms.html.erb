@@ -1,0 +1,466 @@
+
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-6 col-sm-3">
+                    <a href="#" class="logo">
+                    	<%= image_tag('logo.png') %>
+                      <!--   <img src="images/logo.png" alt=""> -->
+                    </a>
+                </div>
+                <div class="col-md-6 col-xs-6 col-sm-6">
+                    <div class="menu">
+                        <nav class="navbar navbar-default" role="navigation">
+                            <div class="container-fluid">
+                                <!-- Brand and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    </button>
+                                </div>
+
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse no-box" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="#banner">Home</a></li>
+                                        <li><a href="#service">Act</a></li>
+                                        <li><a href="#feature">HowItWorks</a></li>
+                                    
+                                        <li><a href="<%=new_member_session_path%>">Office</a></li>
+                                    </ul>
+                                  
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12 col-sm-3">
+                    <ul class="social-info">
+                        <li><a href="http://web.facebook.com/fundpaddy"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="http://twitter.com/fundpaddy"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="plus.google.com/fundpaddy"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+    <section id="banner" class="wow fadeInUp">
+        <div class="container">
+            
+            <div class="row">
+           
+            <div class="col-sm-6 col-xs-6">
+            <h3 style="color:green; padding-top: 60px;">Questions and Answers for Successful Participation</h3>
+            <hr/>
+           
+
+           <div class="container">
+ <br/>
+
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                This section contains frequently asked questions and warnings about <strong>fundPaddy</strong> and how to have a smooth participation
+            </div>
+
+    
+     <div class="panel-group" id="faqAccordion">
+        <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">What is fundPaddy?</a>
+              </h4>
+
+            </div>
+            <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p>   fundPaddy is a peer-to-peer donation and mutual aid fund scheme where participants help each other financially to achieve a set goal.
+                        </p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">Who is Eligible to join?</a>
+              </h4>
+
+            </div>
+            <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p> There is no age and gender barrier in joining fundPaddy. Every participant gets equal benefits according to his/her donations.</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">Can i own multiple accounts?</a>
+              </h4>
+
+            </div>
+            <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p> Yes. But you will require a new email and phone number for your other accounts. Participant freely..</p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">Are there setup fees?</a>
+              </h4>
+
+            </div>
+            <div id="question3" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p> No, in fundPaddy, participants get their personal offices setup for free.</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question4">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">How do i participate?</a>
+              </h4>
+
+            </div>
+            <div id="question4" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p>  The steps involved in this process are really simple. All you need to do is:
+
+                    <ul>
+                        <li>Register for a free account</li>
+                        <li>Login to your Office</li>
+                        <li>Add your Basic Account Details on the <strong>Accounts </strong> page.
+                        <li>Select a Donation Plan that suits you, and create a donation request
+                        <li>You will be matched to make a donation with 72 hours from the point of creation. </li>
+                        <li>As soon as your donation is confirmed by the recipient, you can redeem this donation and get 200% returns </li>
+                        <li>Donate again and continue earning over and over again.
+                    </ul></p>
+                </div>
+            </div>
+        </div>
+
+         <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question5">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">How do i redeem my donation</a>
+              </h4>
+
+            </div>
+            <div id="question5" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p>   As soon as a donation is confirmed, it becomes redeemable. Click on the donations link on your Office and you will see the <strong>Redeem</strong> button next to your donation.</p>
+                </div>
+            </div>
+        </div>
+
+         <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question6">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">Is fundPaddy legal?</a>
+              </h4>
+
+            </div>
+            <div id="question6" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p>  fundPaddy is a multi-plan social financial community where people who are willing to help each other voluntarily,  participants join and participate freely. Giving money to another is not prohibited by either international or local legal systems, therefore all fund transfers as a result of participation on this platform are "Donations". i.e. Freewill giving.</p>
+                </div>
+            </div>
+        </div>
+
+
+         <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question7">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">I made payment but it has not been confirmed?</a>
+              </h4>
+
+            </div>
+            <div id="question7" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p>    the fundPaddy system is timed, All recipients and donors can see the time details for each transaction. If the time elapses and the donation has not been confirmed, you will need to contact the fundTeam support with proof of donation, i.e., a scanned copy of the teller or the Transaction details made through the payment processor. Simply upload the document and sent it to help@fundpaddy.com or help.fundpaddy@gmail.com for further investigation by the support team. For more ideas, send a chat through the 247 chat service on the bottom of each page..</p>
+                </div>
+            </div>
+        </div>
+
+
+         <div class="panel panel-default ">
+            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question8">
+                 <h4 class="panel-title">
+                    <a href="javascript:;" class="ing">How long does it take to get paid?</a>
+              </h4>
+
+            </div>
+            <div id="question8" class="panel-collapse collapse" style="height: 0px;">
+                <div class="panel-body">
+                     <h5><span class="label label-primary">Answer</span></h5>
+
+                    <p> All donations and withdrawals will be matched between 0-72 hours after this donations are confirmed 90% of the time.</p>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </div>
+    <!--/panel-group-->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+
+
+    <section id="banner" class="wow fadeInUp">
+        <div class="container">
+            
+            <div class="row">
+            <div class="col-sm-3 col-xs-3"> </div>
+            <div class="col-sm-6 col-xs-6">
+            <h3 style="color:green;">Questions and Answers for Successful Participation</h3>
+            <hr/>
+           
+
+           <div class="container">
+    <br />
+    <br />
+    <br />
+
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        This section contaions frequently asked questions and warnings about <strong>fundPaddy</strong> and how to have a smooth participation
+    </div>
+
+    <br />
+
+    <div class="" id="accordion">
+        <div class="faqHeader">Knowledge (General)</div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">What is fundPaddy?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="card-block">
+                   fundPaddy is a peer-to-peer donation and mutual aid fund scheme where participants help each other financially to achieve a set goal.
+
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Who is Eligible to Join?</a>
+                </h4>
+            </div>
+            <div id="collapseTen" class="panel-collapse collapse">
+                <div class="card-block">
+                 There is no age and gender barrier in joining fundPaddy. Every participant gets equal benefits according to his/her donations.
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">Can i Own Multiple accounts?</a>
+                </h4>
+            </div>
+            <div id="collapseEleven" class="panel-collapse collapse">
+                <div class="card-block">
+                  Yes. But you will require a new email and phone number for your other accounts. Participant freely.
+                </div>
+            </div>
+        </div>
+
+        <div class="faqHeader">More Info</div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Are there setup fees?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="card-block">
+                    No, in fundPaddy, participants get their personal offices setup for free.
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">How do i Participate? </a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="card-block">
+                    The steps involved in this process are really simple. All you need to do is:
+
+                    <ul>
+                        <li>Register for a free account</li>
+                        <li>Login to your Office</li>
+                        <li>Add your Basic Account Details on the <strong>Accounts </strong> page.
+                        <li>Select a Donation Plan that suits you, and create a donation request
+                        <li>You will be matched to make a donation with 72 hours from the point of creation. </li>
+                        <li>As soon as your donation is confirmed by the recipient, you can redeem this donation and get 200% returns </li>
+                        <li>Donate again and continue earning over and over again.
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">How do i redeem my donation?</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="card-block">
+                    As soon as a donation is confirmed, it becomes redeemable. Click on the donations link on your Office and you will see the <strong>Redeem</strong> button next to your donation.
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Is Fundpaddy legal? </a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+                <div class="card-block">
+                  fundPaddy is a multi-plan social financial community where people who are willing to help each other voluntarily,  participants join and participate freely. Giving money to another is not prohibited by either international or local legal systems, therefore all fund transfers as a result of participation on this platform are "Donations". i.e. Free will giving.
+                </div>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">I made payment and it has not been confirmed? </a>
+                </h4>
+            </div>
+            <div id="collapseEight" class="panel-collapse collapse">
+                <div class="card-block">
+                   the fundPaddy system is timed, All recipients and donors can see the time details for each transaction. If the time elapses and the donation has not been confirmed, you will need to contact the fundTeam support with proof of donation, i.e., a scanned copy of the teller or the Transaction details made through the payment processor. Simply upload the document and sent it to help@fundpaddy.com or help.fundpaddy@gmail.com for further investigation by the support team. For more ideas, send a chat through the 247 chat service on the bottom of each page.
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-header">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">How long does it take to get paid?</a>
+                </h4>
+            </div>
+            <div id="collapseNine" class="panel-collapse collapse">
+                <div class="card-block">
+                   All donations and withdrawals will be matched between 0-72 hours after this donations are confirmed 90% of the time.
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+</div>
+ -->
+<!-- 
+<style>
+    .faqHeader {
+        font-size: 27px;
+        margin: 20px;
+    }
+
+    .panel-heading [data-toggle="collapse"]:after {
+        font-family: 'Glyphicons Halflings';
+        content: "e072"; /* "play" icon */
+        float: right;
+        color: #F58723;
+        font-size: 18px;
+        line-height: 22px;
+        /* rotate "play" icon from > (right arrow) to down arrow */
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    .panel-heading [data-toggle="collapse"].collapsed:after {
+        /* rotate "play" icon from > (right arrow) to ^ (up arrow) */
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        color: #454444;
+    }
+</style>
+
+
+
+ -->
+
+            </div>
+
+            <div class="col-xs-3 col-sm-3"></div>
+            </div>
+            </div>
+    </section>
+
+
+
+
+    <footer class="wow fadeInUp" data-wow-delay=".8s">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-12">
+                        <a class="footer-logo"href="#">
+
+                         <%= image_tag('footer-logo.png', class: 'img-responsive') %>
+                           <!--  <img class="img-responsive" src="images/footer-logo.png" alt=""> -->
+                        </a>
+                    <p>Copyright © 2017 fundPaddy. All rights reserved. </p>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>

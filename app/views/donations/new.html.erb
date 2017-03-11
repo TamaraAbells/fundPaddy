@@ -22,7 +22,7 @@
 
             <p class="small"> <i class="fa fa-check-square-o"></i> Start by Adding your account Details in the Accounts Page or <a href="<%=office_settings_path%>" target="_blank"> Click Here</a> to do so. <i>(very important)</i></p>
 
-             <p class="small"> <i class="fa fa-check-square-o"></i> Read the warnings and <a href="#" target="_blank">terms of participation</a><i>(important)</i></p>
+             <p class="small"> <i class="fa fa-check-square-o"></i> Read the warnings and <a href="<%=warning_terms_path%>" target="_blank">terms of participation</a><i>(important)</i></p>
 
               <p class="small"> <i class="fa fa-check-square-o"></i> Click on the Plus (+) Create Donation Button on the top menu to create a new Donation. </p>
       
@@ -88,7 +88,7 @@
       <%= form_for @donation, url: {action: 'create'}, :html => {class: 'donateForm'} do |f| %>
 
 	      <div class="modal-body">
-	    <p class="small"> Please verify that information below is correct (i.e amount and plan) before creating donation and that you have read the <a href="#" target="_blank">terms & conditions</a> before saving your donation .</p>
+	    <p class="small"> Please verify that information below is correct (i.e amount and plan) before creating donation and that you have read the <a href="<%=warning_terms_path%>" target="_blank">terms & conditions</a> before saving your donation .</p>
 	      	 <div class="row">
       
       <div class="col-md-6">
@@ -216,7 +216,7 @@
       <%= form_for @donation, url: {action: 'create'} do |f| %>
 
 	      <div class="modal-body">
-	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="#" target="_blank">terms & conditions</a> before saving your donation .</p>
+	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="<%=warning_terms_path%>" target="_blank">terms & conditions</a> before saving your donation .</p>
 	      	 <div class="row">
       
       <div class="col-md-6">
@@ -318,7 +318,7 @@
       <%= form_for @donation, url: {action: 'create'} do |f| %>
 
 	      <div class="modal-body">
-	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="#" target="_blank">terms & conditions</a> before saving your donation .</p>
+	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="<%=warning_terms_path%>" target="_blank">terms & conditions</a> before saving your donation .</p>
 	      	 <div class="row">
       
       <div class="col-md-6">
@@ -395,7 +395,7 @@
       <%= form_for @donation, url: {action: 'create'} do |f| %>
 
 	      <div class="modal-body">
-	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="#" target="_blank">terms & conditions</a> before saving your donation .</p>
+	    <p class="small"> Please verify that information below is correct (i.e amount and plan) and that you have read the <a href="<%=warning_terms_path%>" target="_blank">terms & conditions</a> before saving your donation .</p>
 	      	 <div class="row">
       
       <div class="col-md-6">

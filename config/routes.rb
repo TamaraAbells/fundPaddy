@@ -20,6 +20,7 @@ resources :withdrawals
   end
 
   get 'office/settings'
+  get 'office/terms', to: 'static_pages#terms', as: 'warning_terms'
 
   get 'office/blocked', to: 'static_pages#blocked', as: 'blocked_members'
 
