@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
   
   
+  namespace :admin do
+    resources :members
+resources :accounts
+resources :donations
+resources :messages
+resources :notifications
+resources :withdrawals
+
+    root to: "members#index"
+  end
+
   devise_for :members, :path => 'account'
 
   resources :members do
