@@ -12,11 +12,18 @@ before_action :authenticate_member!
 
     @withdrawal = current_member.withdrawals.new
 
+     if current_member.status == 1
+        flash[:error] = "YOU BROKE THE RULES!!!"
+        redirect_to blocked_members_path
+      end
+
   end
 
   def new
     @member = current_member
     @donation = @member.donations.build
+
+
   end
 
   def create
@@ -28,6 +35,7 @@ before_action :authenticate_member!
     else
       flash[:error] = "Error creating your donation. try again"
       render 'new'
+      
     end
 
   end
