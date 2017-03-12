@@ -39,3 +39,9 @@
 
 }
 
+#toast-container{
+	position:absolute;
+	z-index: 100008;
+}
+
+

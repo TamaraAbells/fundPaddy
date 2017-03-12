@@ -91,9 +91,14 @@ module ApplicationHelper
 
 					results << "Donation Timed out"
 
-					if available_donations.count >= 1
+					#check for available donation in specified plan
+					donation_to_match = available_donations.where(amount: donation.amount).order(created_at: 'asc')
 
-						donation_to_match = available_donations.where(amount: donation.amount).first
+		
+
+					if donation_to_match.count >= 1
+
+						new_donation = donation_to_match.first
 
 						results << "Found 1 new donation  waiting.."
 
@@ -115,7 +120,7 @@ module ApplicationHelper
 						matchtime = Time.now
 						blocktime = matchtime + 86400
 
-						if donation_to_match.update(status: 'matched', recipient_id: withdrawer_id,  withdrawal_id: withdrawal_id, matchtime: matchtime, blocktime: blocktime)
+						if new_donation.update(status: 'matched', recipient_id: withdrawer_id,  withdrawal_id: withdrawal_id, matchtime: matchtime, blocktime: blocktime)
 							results << "Donation  -deleted and member rematched"
 						else
 							results << "There was an error selecting a new donation for the member"

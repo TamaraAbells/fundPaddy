@@ -11,6 +11,15 @@ body {
   background-color: #e7edee;
 }
 
+
+#toast-container {
+  position: absolute;
+  z-index: 2;
+}
+
+.toast {
+  z-index: 2;
+}
 footer {
   background: #e7edee;
   background-color: #e7edee;
