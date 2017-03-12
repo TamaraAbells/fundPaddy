@@ -19,4 +19,9 @@ class NotifierMailer < ApplicationMailer
 		@url = "http://fundpaddy.com"
 		mail(to: "help.fundpaddy@gmail.com", subject: "New Member Signed Up!")
 	end
+
+	def send_invite(email)
+		@url = "http://fundPaddy.com"
+		mail(to: email, subject: "Invitation From A Friend")
+	end
 end

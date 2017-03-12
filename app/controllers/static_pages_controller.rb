@@ -26,6 +26,23 @@ layout "static_pages"
   def about
   end
 
+  def invite
+    @message = Message.new
+
+  end
+
+  def send_invite
+    @email = params[:email]
+    if @email
+      NotifierMailer.send_invite(@email).deliver
+      flash[:notice] = "Succesfully sent invite. Kindly notify your invites to use your email as 'referrer' when signing up"
+      redirect_to root_path
+    else
+      flash[:error] = "There was an error sending email to invite"
+      redirect_to root_path
+    end
+  end
+
   def terms
     @message = Message.new
 

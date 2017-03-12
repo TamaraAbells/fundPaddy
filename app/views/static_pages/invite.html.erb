@@ -63,27 +63,27 @@
                     </div>
                     
                 </div>
-                <div class="col-md-6 col-md-offset-1 col-sm-6">
+                <div class="col-md-6 col-md-offset-1 col-sm-6" style="padding-top:60px;">
                     <div class="block">
                         <h1 class="styled" style="color:#29c75f;">
-                           FundPaddy
+                           Invite A Friend 
                         </h1> <hr/>
                         <p class="roboto">
-                           FundPaddy is a peer-to-peer (member to member) donation platform. You Get twice(2x) your initial donation amount within 72 hours i.e. (1-3 days)after a completed donation. yes! "within 72 hours", and we mean it.<br/><Br/>
-                                                      Our platform supports five (5) different currencies accross the world, and we are always expanding our reach.
+                          Invite a friend to join fundPaddy by entering their email below 
                         </p>
 
-                        <ul class="download-btn">
-                            <li>
-                                <a href="<%=new_member_registration_path%>" class="btn btn-default btn-apple"> <i class="fa fa-plus-circle"></i>Register</a>
-                            </li>
-                            <li>
-                                <a href="<%=new_member_session_path%>" class="btn btn-default btn-andriod"><i class="fa fa-sign-in"></i>Log in</a>
-                            </li>
-                            <li>
-                                <a href="<%=invite_path%>" class="btn btn-default btn-windows"><i class="fa fa-send"></i>Invite</a>
-                            </li>
-                        </ul>
+                        <div class="form-group">
+                            <%= form_tag send_invite_path do %>  
+                              <%= text_field_tag :email, "", class: 'form-control', placeholder: "Enter Email Address" %>  
+                             
+
+
+                            <%= button_tag type: 'submit', class: "btn btn-info btn-block btn-signup ", id: "sendInvite" do %>
+                                    <i class="fa fa-send" aria-hidden="true"> Send Invite</i>
+                                <% end %>
+                            <% end %>  
+                        </div>
+                                    
                         
 
                     </div>

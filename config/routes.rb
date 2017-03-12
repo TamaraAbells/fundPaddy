@@ -19,6 +19,10 @@ resources :withdrawals
     resources :withdrawals
   end
 
+  get 'office/invite', to: 'static_pages#invite', as: 'invite'
+
+  post 'office/send_invite', to: 'static_pages#send_invite', as: 'send_invite'
+
   get 'office/settings'
   get 'office/terms', to: 'static_pages#terms', as: 'warning_terms'
 
