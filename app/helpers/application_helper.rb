@@ -61,10 +61,20 @@ module ApplicationHelper
 					blocktime = matchtime + 86400
 
 					d.update(status: 'matched', recipient_id: withdrawer_id, withdrawal_id: w.id, matchtime: matchtime, blocktime: blocktime)
+					
+					#send match email
+					NotifierMailer.match_email(d.member).deliver
+
+					results << "Notification sent!"
 					results << "1 Donation matched"
 				end
 
 				w.update(status: 'matched')
+
+
+					#send match email
+					NotifierMailer.match_email(w.member).deliver
+
 
 				results << "Successfuly matched 1 new withdrawal to 2 donations"
 			else
@@ -121,6 +131,10 @@ module ApplicationHelper
 						blocktime = matchtime + 86400
 
 						if new_donation.update(status: 'matched', recipient_id: withdrawer_id,  withdrawal_id: withdrawal_id, matchtime: matchtime, blocktime: blocktime)
+							
+							#send match email
+							NotifierMailer.match_email(new_donation.member).deliver
+
 							results << "Donation  -deleted and member rematched"
 						else
 							results << "There was an error selecting a new donation for the member"

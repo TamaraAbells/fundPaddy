@@ -40,6 +40,9 @@ gem 'jbuilder', '~> 2.5'
 #Adding font awesome to project
 gem "font-awesome-rails"
 
+#adding figaro for sensitive details protection
+gem "figaro"
+
 #using devise for authentication
 gem 'devise'
 

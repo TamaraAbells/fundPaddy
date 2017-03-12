@@ -12,4 +12,14 @@ class Member < ApplicationRecord
    has_many :withdrawals, dependent: :destroy
 
    has_many :notifications, dependent: :destroy
+
+   after_create :send_welcome_mail
+
+   def send_welcome_mail
+   	NotifierMailer.welcome_email(self).deliver
+
+    #send admin an alert
+    NotifierMailer.new_member_alert.deliver
+
+   end
 end
