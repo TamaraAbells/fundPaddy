@@ -7,9 +7,20 @@
          <meta name="keywords" content="Funding, Best peer to peer donation platform, peer-to-peer, donations, make money quick, ponzi scheme, pyramid scheme, best money doubling website, genuine, reliable website, built to last">
         <meta name="description" content="Get 200% on each donation within 72 hours. Fundpaddy is a reliable peer to peer donations platform on steroids. Built to last and built for all.">
 
+         <link rel="stylesheet" type="text/css" href="../assets/admin/css/vendor.css">
+  <link rel="stylesheet" type="text/css" href="../assets/admin/css/flat-admin.css">
+
+  <!-- Theme -->
+  <link rel="stylesheet" type="text/css" href="../assets/admin/css/theme/blue-sky.css">
+  <link rel="stylesheet" type="text/css" href="../assets/admin/css/theme/blue.css">
+  <link rel="stylesheet" type="text/css" href="../assets/admin/css/theme/red.css">
+  <link rel="stylesheet" type="text/css" href="../assets/admin/css/theme/yellow.css">
+
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -216,7 +227,8 @@
         </li>
         <li>
           <button type="button" class="navbar-toggle">
-            <img class="profile-img" src="../assets/images/profile.png">
+            <%= gravatar_for(current_member) %>
+<!--             <img class="profile-img" src="../assets/images/profile.png"> -->
           </button>
         </li>
       </ul>
