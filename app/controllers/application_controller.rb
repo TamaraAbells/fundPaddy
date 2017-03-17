@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+
+  layout :layout_by_resource
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected
@@ -16,6 +19,14 @@ class ApplicationController < ActionController::Base
 
   def after_sign_out_path_for(resource)
   	new_member_session_path
+  end
+
+  private
+
+  def layout_by_resource
+    if devise_controller?
+      "account"
+    end
   end
 
 end

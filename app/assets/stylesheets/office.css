@@ -10,33 +10,23 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
-
-
- *= require_self
- *= require custom
- *= require font-awesome
- *= require css/font-awesome.min
- *= require css/main       
- *= require css/animate
- *= require css/responsive
- *= require toastr
- *= require css/bootstrap.min
- *= require static_pages
- *= require withdrawals
+ *  require css/bootstrap.min
   
 
 
+
+ *= require css/vendor
+ *= require css/flat-admin
+ *= require css/bootstrap.min
+ *= require font-awesome
+ *= require toastr
+ *= require withdrawals
+ *= require_self
+
+ 
  */
 
-
-#withdraw-step .icon {
- background-color: #ffbc11;
-
+.navbar .navbar-collapse .navbar-nav > li.dropdown.notification.warning a.dropdown-toggle .icon {
+    background-color: rgba(41, 199, 95, 0.2);
+    color: rgba(41, 199, 95, 0.47);
 }
-
-#toast-container{
-	position:absolute;
-	z-index: 100008;
-}
-
-

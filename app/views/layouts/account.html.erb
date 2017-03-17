@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %> - Official Website</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <meta name="keywords" content="Funding, Best peer to peer donation platform, peer-to-peer, donations, make money quick, ponzi scheme, pyramid scheme, best money doubling website, genuine, reliable website, built to last">
+        <meta name="description" content="Get 200% on each donation within 72 hours. Fundpaddy is a reliable peer to peer donations platform on steroids. Built to last and built for all.">
+
+
+    <%= csrf_meta_tags %>
+
+   
+    <%= stylesheet_link_tag 'office', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+    <%= javascript_include_tag 'office', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+
+<div class="app app-default">
+<%= yield %>
+</div>
+
+
+
+     <% unless flash.empty? %>
+    <script type="text/javascript">
+        <% flash.each do |f| %>
+        <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+        
+         toastr['<%= type %>']('<%= f[1] %>');
+        <% end %>
+    </script>
+   <% end %>
+
+   
+
+    
+    <%= debug(params) if Rails.env.development? %>
+
+
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93545926-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/58c3345470cdfb0937ff0935/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+<!--End of Tawk.to Script-->
+
+
+  </body>
+</html>

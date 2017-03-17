@@ -1,0 +1,12 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.navbar .navbar-collapse {
+    background-color: #FFF;
+    border-radius: 2px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    /* box-shadow: 0 1px 2px #c8d1d3; */
+}

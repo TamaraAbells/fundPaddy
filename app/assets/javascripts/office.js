@@ -9,27 +9,23 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+
+
 //= require jquery
 //= require jquery_ujs
+
 //= require turbolinks
 
-
+//= require js/vendor-office
 //= require js/app
-//= require js/vendor/modernizr-2.6.2.min
-//= require js/vendor/jquery-1.10.2.min
-//= require js/bootstrap.min
-//= require js/plugins
+
 //= require js/main
+
 //= require jquery.validate
 
 //= require toastr
 
-//= require js/wow.min
-
-         new WOW(
-            ).init();
-
+//= require_self
 
 
 	$(document).ready(function() {
