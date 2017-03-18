@@ -124,7 +124,11 @@
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">
                         <i class="fa fa-shield" aria-hidden="true"></i></span>
-                            <%= donor1.accounts.first.phone %>
+                            <% if donor1.accounts.any? %>
+                                <%= donor1.accounts.first.phone %>
+                            <% else %>
+                                <%= "No phone number provided"%>
+                            <% end %>
                     </div>
 
                        <div class="input-group">
@@ -263,7 +267,11 @@
                     <div class="input-group">
                       <span class="input-group-addon" id="basic-addon1">
                         <i class="fa fa-shield" aria-hidden="true"></i></span>
-                            <%= donor2.accounts.first.phone %>
+                               <% if donor2.accounts.any? %>
+                                <%= donor2.accounts.first.phone %>
+                            <% else %>
+                                <%= "No phone number provided"%>
+                            <% end %>
                     </div>
 
                        <div class="input-group">
