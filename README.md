@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was a peer to peer donation platform i built for people to learn from and use themselves. 
 
-Things you may want to cover:
+To setup on your local system, use the below steps
 
-* Ruby version
+* Fork Repository
 
-* System dependencies
+* Clone your local version of the repository
 
-* Configuration
+* CD into the directory on your system
 
-* Database creation
+* Run Bundle Install in the directory
 
-* Database initialization
+* Run rails db:migrate
 
-* How to run the test suite
+* Run rails s to start your local server
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
